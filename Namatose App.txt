@@ -1,0 +1,581 @@
+Perfect. This is your AI-Ready System Breakdown Document for building Namatose as a fully offline-first HTML Android webapp.
+No Excel.
+No spreadsheets.
+Everything is structured around Bothoflow logic.
+NAMATOSE — SYSTEM SUMMARY FOR AI APP BUILD
+1️⃣ CORE PHILOSOPHY — BOTHOFLOW
+Bothoflow is not just UI.
+It is a structural logic system built on:
+ITMES → NOTES → SUM → PROFILE → COMMUNITY
+Everything in the platform is treated as a Note.
+Every Note contains Items.
+Every Item can be calculated.
+Every calculation feeds into a Sum. (Notes are saved into Sums)
+Every Sum belongs to a Profile.
+Every Profile belongs to a Micro Community.
+This ensures:
+• Zero information overload
+• Infinite depth
+• Single page illusion
+• Expandable architecture
+• Offline operability
+• Investor-proof UX structure
+2️⃣ PROFILE SYSTEM (Tiered Permissions)
+Profiles determine access level and data visibility.
+Minimum 7 Profile Types:
+🔹 1. Browser User (Default Login)
+Permissions:
+• View items
+• Create Notes
+• Create Sums
+• Set budgets
+• Add Items
+• Save locally offline
+• Share via WhatsApp
+Cannot:
+• Publish items publicly
+• Access vendor dashboard
+• Manage Motshelo groups
+🔹 2. Standard User (Man / Woman)
+Permissions:
+• Everything Browser has
+• Save reusable Sums
+• Create Custom Items
+• Publish price anonymously to community
+• Join Motshelo groups
+• Vote in Motshelo
+• View Micro Group Budget analytics
+🔹 3. Motshelo Member
+Permissions:
+• Join group
+• View group contributions
+• Vote on animals or groceries
+• Submit borrow request
+• Confirm transactions
+• Approve purchases (4-confirmation minimum)
+Cannot:
+• Release funds alone
+• Override votes
+🔹 4. Motshelo Manager
+Permissions:
+• Create group
+• Set weekly/monthly contributions
+• Initiate vote
+• Trigger slaughter event
+• Lock/unlock group
+• See group fund total
+• Moderate disputes
+Cannot:
+• Override 4-person confirmation rule
+🔹 5. Vendor (Butcher / Grocery / Service Provider)
+Permissions:
+• Create Vendor Profile
+• List Items with:
+• Photo
+• Price
+• Unit
+• Tags
+• Description
+• Create Notices
+• Add WhatsApp contact link
+• Add Facebook gallery link
+• View demand heatmap (micro grouped)
+• View analytics (KPI dashboard)
+• See aggregated demand but never personal user data
+Cannot:
+• View individual user identity
+🔹 6. Supplier Service Vendor
+Examples:
+• Abattoir
+• Refrigeration
+• Transport
+• Farmers
+Permissions:
+• List services
+• Set availability schedule
+• See vendor demand forecast
+🔹 7. Developer Admin
+Permissions:
+• Full read access
+• System configuration
+• KPI oversight
+• Revenue reporting
+• Role assignment
+• Abuse flag review
+• Platform logic protection (Bothoflow cannot be modified)
+Cannot:
+• Alter core UI architecture
+3️⃣ CORE FEATURES
+A. SUM SYSTEM (Live Budget Engine)
+User can:
+• Create New Sum
+• Set Budget
+• Choose:
+• Daily
+• Scheduled Day
+• Weekly
+• Monthly
+As items are added:
+Remaining Budget = Budget - Item Total
+Live updating.
+Sums can be:
+• Saved
+• Cloned
+• Reset
+• Shared via WhatsApp
+• Used for family, diet, children, work, etc.
+B. NOTE SYSTEM
+Everything is expandable.
+Notes include:
+• Meat Categories
+• Beef
+• Chicken
+• Goat
+• Buffalo
+• Zebra
+• Game
+• Groceries
+• Motshelo
+• Vendor Profiles
+• Notices
+• Analytics
+• Requests
+Notes collapse to prevent overload.
+Opening one hides others.
+Single page illusion maintained.
+C. ITEM SYSTEM
+Items include:
+• Image
+• Price
+• Unit
+• Vendor
+• Tags
+• Share type (Divide / Share)
+• Slot count
+Users can:
+• Add to Sum
+• Create Item
+• Upload image
+• Publish to community
+• Keep private
+4️⃣ MOTSHELO ENGINE (Core Community System)
+This is not a simple savings pool.
+It is structured democratic budgeting.
+Motshelo Group Rules
+• Minimum 10 members
+• Maximum 50
+• Weekly or Monthly contribution
+• Must have 4 confirmations to validate:
+• Borrow request
+• Animal purchase
+• Fund release
+Voting Engine Logic
+• Manager creates Vote Note:
+• Animal ID
+• Price
+• Share breakdown
+• Date
+• Members vote:
+• Approve
+• Reject
+• Vote is valid if:
+• 50% majority
+• Minimum quorum threshold reached
+• Once Approved:
+• Slots open
+• Members reserve slot
+• Payments confirmed manually
+• 4 independent confirmations required
+• When Full:
+• Status changes to:
+READY TO BUTCHER
+• P100 processing fee triggered automatically
+Borrow Request Engine
+User submits:
+• Amount
+• Reason
+• Repayment plan
+Group members vote.
+4 confirmations required.
+All visible in Request Log.
+Transparency Rules
+• All contributions visible
+• All borrowings visible
+• Expected repayment date visible
+• Cash + Mobile Money supported:
+• BTC Smega
+• Mascom MyZaka
+• Orange Money
+5️⃣ OFFLINE FIRST ARCHITECTURE
+Everything runs locally:
+• localStorage or IndexedDB
+• Sync only when online
+• WhatsApp deep links
+• Facebook links
+• Minimal data usage
+• No heavy auto refresh
+Manual confirmation preferred.
+Botswana data cost aware design.
+6️⃣ VENDOR KPI SYSTEM (200 Metrics)
+Vendors can view:
+• Most viewed items
+• Most added items
+• Abandoned Sums
+• City demand heatmap
+• Meat preference trends
+• Budget average by demographic micro group
+• Peak purchasing day
+• Share size popularity
+• Contribution reliability score
+• Monthly profit estimate
+• Repeat customers
+• Demand volatility
+• Community engagement rate
+All anonymised.
+Grouped minimum 2 people.
+Up to 500 micro clusters.
+7️⃣ MASTER DATA STRUCTURE (Now Web Based)
+Instead of Excel:
+Static data stored in JSON:
+• Animal types
+• Breeds
+• Cities
+• Areas
+• Networks
+• Payment status
+• Share types
+• Slot rules
+• Contribution cycles
+Editable only by Admin.
+8️⃣ SYSTEM LAYERS
+Level 1 — Top Header (Page indicator)
+Level 2 — Sum Header (Live calculation card)
+Level 3 — Note Body (Expandable ecosystem)
+Level 4 — Bottom Navigation
+Feels like one page.
+Slides left/right infinitely.
+Accordions vertically deep.
+9️⃣ SECURITY STRUCTURE
+• Role based access control
+• Motshelo confirmation lock
+• No fund release without quorum
+• Vendor data anonymised
+• Developer cannot alter Bothoflow structure
+• UI logic protected
+🔟 NAMATOSE VISION
+Namatose is:
+• A meat sharing platform
+• A grocery budgeting tool
+• A community motshelo engine
+• A vendor intelligence system
+• A micro demographic analytics network
+• A WhatsApp-first commerce enhancer
+• An offline-first financial planning tool
+It is not:
+• A supermarket replacement
+• A social media platform
+• A banking institution
+It is:
+A Community Budget Infrastructure Layer for Botswana.
+FINAL AI BUILD INSTRUCTION SUMMARY
+Build a:
+• Single page offline HTML webapp
+• Card based architecture
+• Expandable note system
+• Role based permission engine
+• Live budget sum engine
+• Motshelo voting + 4 confirmation engine
+• Vendor KPI dashboard
+• JSON based master data
+• WhatsApp integrated communication
+• Facebook gallery linking
+• Android installable PWA structure
+If you want next:
+I can now break this into:
+• Full technical architecture diagram
+• JSON data schema
+• Database model
+• PWA installation structure
+• Security architecture
+• Or Full Motshelo voting state machine logic
+Tell me which layer we engineer next.
+
+NAMATOSE - Meat Calculator DEMO (2).xlsx
+Spreadsheet
+Design wise the ENTIRE background is VERY VERY light grey and utilise white cards with VERY light 4px border lines at 70% and soft corners (3px). App is design in 4 levels going down. - "Top Header' - this shows what page the user is and vanishes when the user scrolls. - 'Sum Header'- it is not available on every page, this holds the 'User Sum Card' that keeps a calculated tally of all the items (goods and services) in the users "Super shopping basket) (even the community can share prices especially in our botswans environment where there are monopolies and prices are being fixed. - 'Note Body' - when the 'Sum Header' is closed the 'Note Body' moves upwards bt it is always visible unless the 'Sum Headers expanded. - 'Bottom Navigation' - this where buttons for, 'Items', 'Promos', 'Notice' (Notice board) and 'Profile' are located. Create for me an html webapp within the dimensions of mobile devices like my Samsung a14 and this simple sleek looking app needs to have a login screen for First Name, WhatsApp Number and Password (no or any details will load the user in as a Browser), provide a Profiles button at the bottom that slides up a list of User Profiles (I am based in Botswana) and these Profiles are x2 Users (man, woman), x3 Vendors (butcher, refrigeratelig or any other service provider that loads their notice board with post and WhatsApp numbers with requests from customers, potential customers and vendors (partners also)), Developer Admin (I don't know what other Profile Types are necessary to show how the platform showcases levels of permissions). 'Namatose' is predominantly a meat sharing platform and motshelo for meat but it also allows for regular motshelo and Groceries. It needs to be a single page app utilising cards (with pictures (give me ability to add/edit photos and 'Item' Info of dummy data you create) designed to reduce ''Information Overload Anxiety allowing users to explore most of what is logically efficient and optimum to explore in as many levels of reactive accordions and expandables with more reactive interactive pills, Accordions or expandables and so forth and with each layer the is a focus on the information that removes the other from view. 'Namatose' is a simple and clever calculator (I have navigation system I am working on copyrighting called 'Bothoflow' that needs to be integral to how and why the app is built the way it is build so future investors can't change it as making changes to u.i would jeapordise the platforms efficiency making it VERY bad for business (as such this copyright will be in a trust to ensure my kin continue to benefit for as log as the app makes money. / A major part of the 'Bothoflow' U.I structure is to treat most options on the platform as 'Notes' that contain 'Items' that can be summed up, Summarised and calculated in a simple costs report sheet called a 'Sum' which is the 'Sum Card' keeping live track of all the 'Notes' ('Note Card' expandables that are Main Categories with other 'Notes Card Categories' for 'Vendors' etc (follow the logic) and the oppurtunity to creaye an 'Item' they can Save (onto the 'User Items Card' expandable (there is also 'User Sum Card' and 'User Note Card' expanbible located on User Porfile.) at the tutilises 'Notes' and 'Items'. The 'User Sum Card' that stays on top of the screen (when it is dismissed tapping it again will reveal the option to create a 'New Sum' (and add existing or reset) or 'Add Sum' from user's saved Sums (generate 7 sums from a combination of 20 stores where they are adding up different types of meats and products and meat share commitment fees per Scheduled Day,, Week and Month for self, work, diet, 2 children etc this app needs to help a person budget household froceries). Vendors will he given a back end where they can list items in Categories, pictures, tags, prices, units, description etc and add them to Notes and these are auto organised to the platform for users to add to their Sums and Notes. The entire u.i exporience needs to "feel" like it's happening on 1 page even its sliding left and right infinitely. that efficiently utilises single page space architcure and accordions and expandables that behave like 'super baskets' allowing you to add (from Vendor or Category Listed Item) or Create Item (add photo, description, price (for budget) and vendor [user has the option to publish this priced item as a Vendor and it is listed for other to add on their 'Note' o t public There should be 4 views from bottom navigation, 'Items' - category lists of meats (animal type like Beef, Chicken, including Game, like Buffalo, Zebra etc everyrhijg you find in the document) as you go down you view Grocories like milk, bread, etc (within ALL these categories (interactive editablesaccordion expandabls) you can either add from 'Vendor' (butcher, grocery store) create your budget. Vendors need a backend to view atleast 200 kpi's on a daily basis they can put into a report using the similar 'Sum/Note/Item Process'of Bothoflow. The User information we share is 'Micro Grouped Demographic User Behaviour' that is minimum 2 people(a couple or housemates) to 500 (in the larger scheme of a country's population with consideration that the 500 is made of many many different Micros, this is still. MICRO for 'Bothoflow') The motshelo section is located under Profile where the user opens the 'Motshelo Card' to see [I forgot to mention there needs to be a User who also has Motshelo manager privileges (show what privileges they have on the Profiles page with the different profiles and names) and make sure there is a 'Switch Profile' button on the users Profile Menu. The motshelo part of the app needs to be DEEP but simple taking Note that this is the 'Bothoflow' foundation philosophy and its all about community so remember simple logical mechanics like regular Motshelo members ('Motshelo Group Card' - lists who, can add (from listed Names though core communication on app s WhatsApp. / The app is promotes and requires USER INPUT not so much automatic updates and manual updates of that are confirmed by atleast 4 other people and people need to be able to view how much is available to borrow when and a request log showing when they are expecting and how much, (cash and mobile money (btc smega, mascom myzaka and orange money) are the core in Botswana. The app needs to have an offline first structure that updates when online because data is expensive. WhatsApp and Facebook are the most used so where as WhatsApp links will be the core to users communicating with others, Facebook links will he provided for users to see profiles and photo galleries though the app will have 'Items' with pictures for User to add to their 'Notes' so they can see the image of what they are budgeting for BUT for more information a link to a Facebook image in the Vendor gallery (this is one of the ways we promote traffic to Vendor facebook). A user needs to be able to create a daily, scheduled day, weekly or monthly budget for meat sharing, Groceries (emphasis from community and local farmers to get fresh produce outside grocery store system) and their Motshelo commitments. With a 'User Sum Card' a user needs to be able to set a Budget then the more items they add to the sum within 'Notes' and 'Items', the budgets and number of 'Items' reduces in live allowing the to plan how and what to spend on. Namatose is the ULTIMATE COMMUNITY FEEDS PLATFORM!!!! Use the notes below: The 13 are; - MASTER DATA - - ANIMAL LISTING & PRICING - - CUSTOMER REGISTRY - - INVENTORY TRACKING - - CUSTOMER INTEREST - - OWNER PROFIT AUDIT - - NAMATOSE GROUPS - - MONTHLY BILLING - - CUSTOMER STATS - - SHARE TEMPLATE - - SUPPLIER BUSINESS (list f business that provide services, abottoirs, refridgeration, transport etc.) - STOCK INVENTORY (of which is sod at butchery)- That's much easier to read on a phone. I'll provide the formula for each of the 16 columns in the ANIMAL LISTING & PRICING tab (Row 2), ensuring the 7.5% markup and all formatting rules are included. Remember that any item listed as Input requires the Supplier to type data, and the light grey instruction must be set manually on the cell (e.g., using Conditional Formatting or simply setting the font color of the instructional text). 2️⃣ ANIMAL LISTING & PRICING (Row 2 Formulas) A -- Input Reference No. -- Formula -- =TEXT(ROW()-1, "00")&"-"&TEXT(TODAY(), "DDMMMYY")&TEXT(NOW(), "HHMM") B -- Animal Type -- Input -- Dropdown (light grey: '... select animal type') C -- Breed -- Input -- Dropdown (light grey: '... select breed') D -- Beast ID -- Input -- Input (light grey: '... enter unique ID') E -- Description -- Input -- Input (light grey: '... short description') F -- Carcass Weight (KG) -- Input -- Input (light grey: '... enter weight in kg') G -- Price/KG (P) -- Input -- Input (light grey: '... enter raw cost P/kg') H -- Total Raw Cost (P) -- Formula -- =IF(OR(ISBLANK(F2),ISBLANK(G2)), "....", TEXT(F2*G2, "P #,##0.00")) I -- Total Cost (P) with 7.5% Markup -- Formula -- =IF(ISBLANK(H2), "....", TEXT(VALUE(SUBSTITUTE(H2, "P ", ""))*1.075, "P #,##0.00")) (This is the crucial step where the 7.5% private markup is included.) J -- Divide Option -- Input -- Dropdown (light grey: '.... or For Division') K -- # of People Sharing -- Input -- Input (light grey: '... number of people') L -- Cost Per Share (DIVIDE) -- Formula -- =IF(J2="For Division", TEXT(F2/K2, "#0kg")&" for "&TEXT(VALUE(SUBSTITUTE(I2, "P ", ""))/K2, "P #,##0.00")&" each.", "....") (Output format: 45kg for P300.00 each.) M -- Share Option -- Input -- Dropdown (light grey: '.... or For Sharing') N -- Large Share (10kg) -- Formula -- =IF(M2="For Sharing", '06_SHARE_TEMPLATE'!C2&" Slots | 10kg for "&TEXT(VALUE(SUBSTITUTE(I2, "P ", ""))/('06_SHARE_TEMPLATE'!H2)*4, "P #,##0.00")&" per slot.", "....") (The *4 is based on Large Shares being 4x the value of the 2.5kg base unit.) O -- Medium Share (5kg) -- Formula -- =IF(M2="For Sharing", '06_SHARE_TEMPLATE'!D2&" Slots | 5kg for "&TEXT(VALUE(SUBSTITUTE(I2, "P ", ""))/('06_SHARE_TEMPLATE'!H2)*2, "P #,##0.00")&" per slot.", "....") (The *2 is based on Medium Shares being 2x the value of the 2.5kg base unit.) P -- Small Share (2.5kg) -- Formula -- =IF(M2="For Sharing", '06_SHARE_TEMPLATE'!G2&" Slots | 2.5kg for "&TEXT(VALUE(SUBSTITUTE(I2, "P ", ""))/('06_SHARE_TEMPLATE'!H2)*1, "P #,##0.00")&" per slot.", "....") (This uses the Small Share count from the helper tab.) Next Step: Mutual Exclusivity Warning I highly recommend setting up the warning in an adjacent cell (e.g., cell Q2) for the Supplier to see immediately if they select both Divide and Share options: Q -- Warning -- Formula -- =IF(AND(J2<>"....", M2<>"...."), "!!! WARNING: ONLY CHOOSE DIVIDE OR SHARE, NOT BOTH !!!", "") Which tab should we focus on next to build out the full 12-tab system? --------------------------- That's a great approach! Focusing on one or two tabs at a time ensures precision. Here are the formulas for the next two critical tabs: CUSTOMER REGISTRY and INVENTORY TRACKING, presented in the format you requested. 3️⃣ CUSTOMER REGISTRY (Google Form Receiver) Purpose: This tab is the destination for all customer sign-up information via the Google Form. The only column that the Supplier/NamaTose Manager should edit is the Customer Payment Status (Column J). A -- Timestamp -- Form Data -- Data automatically entered by Google Form B -- Name -- Form Data -- Data automatically entered by Google Form C -- Surname -- Form Data -- Data automatically entered by Google Form D -- Town/City -- Form Data -- Data automatically entered by Google Form E -- Area/Neighbourhood -- Form Data -- Data automatically entered by Google Form F -- WhatsApp Number -- Form Data -- Data automatically entered by Google Form G -- Mobile Number -- Form Data -- Data automatically entered by Google Form H -- Beast ID Selected -- Form Data -- Data automatically entered by Google Form (The crucial link column) I -- Price Confirmed (P) -- Formula -- =IF(ISBLANK(H2), "....", TEXT(VLOOKUP(H2, '02_ANIMAL_LISTING_PRICING'!D:I, 6, FALSE), "P #,##0.00")) (Pulls the final cost with the 7.5% markup from the Animal Listing tab for transparency when reviewing sales.) J -- Customer Payment Status -- Input -- Dropdown (light grey: '... set to PAID/PENDING') (Linked to 01_MASTER_DATA for dropdown list. This is the column the Manager edits to confirm payment) 4️⃣ INVENTORY TRACKING (Status Board) Purpose: This is the live status board. It tracks all listed animals and calculates remaining slots based on payments confirmed in CUSTOMER REGISTRY (Tab 3). This status is used to trigger the P100 MOTHSELO Fee. A -- Beast ID -- Formula -- ='02_ANIMAL_LISTING_PRICING'!D2 B -- Animal Type -- Formula -- ='02_ANIMAL_LISTING_PRICING'!B2 C -- Breed -- Formula -- ='02_ANIMAL_LISTING_PRICING'!C2 D -- Carcass Weight (KG) -- Formula -- ='02_ANIMAL_LISTING_PRICING'!F2 E -- Total People Needed -- Formula -- =IF(ISBLANK(A2), "....", IF('02_ANIMAL_LISTING_PRICING'!J2="For Division", '02_ANIMAL_LISTING_PRICING'!K2, '06_SHARE_TEMPLATE'!H2)) (CRITICAL: Checks Tab 2's J2/K2 for DIVIDE count OR Tab 6's H2 for SHARE slot count.) F -- People Registered (R) -- Formula -- =IF(ISBLANK(A2), "....", COUNTIFS('03_CUSTOMER_REGISTRY'!H:H, A2, '03_CUSTOMER_REGISTRY'!J:J, "PAID")) (Counts registrations from Tab 3, but ONLY if the Payment Status (J:J) is set to "PAID".) G -- Remaining Slots -- Formula -- =IF(E2="....", "....", E2-F2) H -- Status -- Formula -- =IF(E2="....", "....", IF(G2<=0, "FULL - READY TO BUTCHER", "OPEN - "&TEXT(G2, "#0")&" Slots Left")) (This column's "FULL" status is the trigger for the P100 MOTHSELO Fee.) Which tab should we move to next? I suggest either OWNER PROFIT AUDIT or NAMATOSE GROUPS. ------------- Absolutely. Here are the formulas and instructions for the CUSTOMER INTEREST and OWNER PROFIT AUDIT tabs, using the exact format you need for easy reading on your phone. 10. CUSTOMER INTEREST (Google Form Receiver) Purpose: This tab is where customer demand information is collected via a Google Form. It acts as a live feed of potential leads. Since this is data from a form, all fields are Form Data. A -- Timestamp -- Form Data -- Data automatically entered by Google Form B -- Animal Type -- Form Data -- Data automatically entered by Google Form C -- Breed -- Form Data -- Data automatically entered by Google Form D -- Town/City -- Form Data -- Data automatically entered by Google Form E -- Area/Neighbourhood -- Form Data -- Data automatically entered by Google Form F -- Preferred Share Size -- Form Data -- Data automatically entered by Google Form (e.g., Large, Medium, Small, or Entire Beast) 7. OWNER PROFIT AUDIT (Private Ledger) 🔒 Purpose: This is the private tab for 86th Avenue to track all revenue (7.5% markup + P100 Motshelo fee). This sheet must be Protected/Owner Only. A -- Beast ID -- Formula -- ='02_ANIMAL_LISTING_PRICING'!D2 B -- Total Raw Cost (P) -- Formula -- ='02_ANIMAL_LISTING_PRICING'!H2 (Links the raw cost before your markup, for auditing.) C -- 7.5% Markup Value (P) -- Formula -- =IF(ISBLANK('02_ANIMAL_LISTING_PRICING'!H2), "....", TEXT(VALUE(SUBSTITUTE('02_ANIMAL_LISTING_PRICING'!H2, "P ", ""))*0.075, "P #,##0.00")) (CRITICAL: Calculates your profit based on the raw cost.) D -- Final Cost to Customer (P) -- Formula -- ='02_ANIMAL_LISTING_PRICING'!I2 (Links the final price which includes the 7.5% markup.) E -- Processing Fee Earned (P) -- Formula -- =IF('04_INVENTORY_TRACKING'!H2="FULL - READY TO BUTCHER", "P 100.00", "....") (Tracks the P100 MOTHSELO Fee only when the animal is fully sold.) F -- TOTAL PROFIT PER BEAST (P) -- Formula -- =IF(ISBLANK(C2), "....", TEXT(VALUE(SUBSTITUTE(C2, "P ", ""))+VALUE(SUBSTITUTE(E2, "P ", "")), "P #,##0.00")) (Sums your two income streams: Markup + Fee.) Which tabs should we tackle next? I recommend we finish the core financial tabs with MONTHLY BILLING and then move to the NAMATOSE GROUPS backbone. --‐-------- Absolutely. We'll build out the backbone of your business—the NAMATOSE GROUPS tab—and finalize your core finance structure with the MONTHLY BILLING tab. Here are the formulas and inputs for both tabs in the mobile-friendly format you requested. 9️⃣ NAMATOSE GROUPS (Motshelo Backbone) Purpose: Manages the Motshelo groups (min 10/max 50 members), tracking contributions and group status. Permissions: Supplier (View), NamaTose Managers (Edit for member details/contributions). A -- Group Name -- Input -- Input (light grey: '... enter group name') B -- Member Name -- Input -- Input (light grey: '... member name') (Row 2 to Row 51 is reserved for members) C -- Mobile Banking Number (MANDATORY) -- Input -- Input (light grey: '... number') D -- WhatsApp Number -- Input -- Input (light grey: '... number') E -- Mobile Call Number -- Input -- Input (light grey: '... number') F -- Mobile Network Provider -- Input -- Dropdown (light grey: '... select network') G -- Delivery Town/City -- Input -- Dropdown (light grey: '... select city') H -- Delivery Area/Neighbourhood -- Input -- Dropdown (light grey: '... select area') I -- Weekly Contribution (P) -- Input -- Input (light grey: '... weekly amount P') J -- Weeks Contributed -- Input -- Input (light grey: '... # of weeks paid') K -- Individual Total (P) -- Formula -- =IF(ISBLANK(I2), "....", TEXT(I2*J2, "P #,##0.00")) (Calculates how much this specific person has contributed.) L -- Group Total (P) -- Formula (Place this formula in L2 only) -- =TEXT(SUM(K2:K51), "P #,##0.00") (Sums the total pooled money for the group (assuming one group per tab). Copy this value down if you need it visible in every row.) M -- Status / Voting -- Formula (Place this formula in M2 only) -- =IF(COUNTA(B2:B51)>=10, "UNLOCKED: Ready to Vote", "LOCKED: Min 10 members required") (Unlocks the group when the minimum of 10 members is met.) N -- Animals Contributed Towards (Count) -- Formula (Place this formula in N2 only) -- This count requires complex logic based on which animals the group voted for and successfully bought. For simplicity now, treat this as Input (light grey: '... animal count') 5️⃣ MONTHLY BILLING (Supplier Invoice) Purpose: Generates the invoice for the Supplier, combining the fixed subscription fee and the P100 Motshelo processing fee for each animal successfully sold (full status). A -- Supplier ID -- Input -- Dropdown (light grey: '... select supplier ID') B -- Processed Animals Count -- Formula -- =COUNTIF('04_INVENTORY_TRACKING'!H:H, "FULL - READY TO BUTCHER") (Counts how many animals in the Inventory Tracker reached "FULL" status, triggering the fee.) C -- Platform Subscription -- Fixed Amount -- P 200.00 D -- MOTHSELO/Listing Fees Due (P) -- Formula -- =TEXT(B2*100, "P #,##0.00") (Calculates the P100 fee multiplied by the count of processed animals.) E -- TOTAL INVOICE DUE (P) -- Formula -- =TEXT(200+(B2*100), "P #,##0.00") (Sums the fixed subscription and the variable Motshelo fees.) We have 4 tabs remaining. Which two should we do next? I suggest the last remaining financial/data tabs: CUSTOMER STATS and MASTER DATA. ----------- Absolutely. We'll build out the backbone of your business—the NAMATOSE GROUPS tab—and finalize your core finance structure with the MONTHLY BILLING tab. Here are the formulas and inputs for both tabs in the mobile-friendly format you requested. 9️⃣ NAMATOSE GROUPS (Motshelo Backbone) Purpose: Manages the Motshelo groups (min 10/max 50 members), tracking contributions and group status. Permissions: Supplier (View), NamaTose Managers (Edit for member details/contributions). A -- Group Name -- Input -- Input (light grey: '... enter group name') B -- Member Name -- Input -- Input (light grey: '... member name') (Row 2 to Row 51 is reserved for members) C -- Mobile Banking Number (MANDATORY) -- Input -- Input (light grey: '... number') D -- WhatsApp Number -- Input -- Input (light grey: '... number') E -- Mobile Call Number -- Input -- Input (light grey: '... number') F -- Mobile Network Provider -- Input -- Dropdown (light grey: '... select network') G -- Delivery Town/City -- Input -- Dropdown (light grey: '... select city') H -- Delivery Area/Neighbourhood -- Input -- Dropdown (light grey: '... select area') I -- Weekly Contribution (P) -- Input -- Input (light grey: '... weekly amount P') J -- Weeks Contributed -- Input -- Input (light grey: '... # of weeks paid') K -- Individual Total (P) -- Formula -- =IF(ISBLANK(I2), "....", TEXT(I2*J2, "P #,##0.00")) (Calculates how much this specific person has contributed.) L -- Group Total (P) -- Formula (Place this formula in L2 only) -- =TEXT(SUM(K2:K51), "P #,##0.00") (Sums the total pooled money for the group (assuming one group per tab). Copy this value down if you need it visible in every row.) M -- Status / Voting -- Formula (Place this formula in M2 only) -- =IF(COUNTA(B2:B51)>=10, "UNLOCKED: Ready to Vote", "LOCKED: Min 10 members required") (Unlocks the group when the minimum of 10 members is met.) N -- Animals Contributed Towards (Count) -- Formula (Place this formula in N2 only) -- This count requires complex logic based on which animals the group voted for and successfully bought. For simplicity now, treat this as Input (light grey: '... animal count') 5️⃣ MONTHLY BILLING (Supplier Invoice) Purpose: Generates the invoice for the Supplier, combining the fixed subscription fee and the P100 Motshelo processing fee for each animal successfully sold (full status). A -- Supplier ID -- Input -- Dropdown (light grey: '... select supplier ID') B -- Processed Animals Count -- Formula -- =COUNTIF('04_INVENTORY_TRACKING'!H:H, "FULL - READY TO BUTCHER") (Counts how many animals in the Inventory Tracker reached "FULL" status, triggering the fee.) C -- Platform Subscription -- Fixed Amount -- P 200.00 D -- MOTHSELO/Listing Fees Due (P) -- Formula -- =TEXT(B2*100, "P #,##0.00") (Calculates the P100 fee multiplied by the count of processed animals.) E -- TOTAL INVOICE DUE (P) -- Formula -- =TEXT(200+(B2*100), "P #,##0.00") (Sums the fixed subscription and the variable Motshelo fees.) We have 4 tabs remaining. Which two should we do next? I suggest the last remaining financial/data tabs: CUSTOMER STATS and MASTER DATA. ------- This is perfect. Focusing on individual tabs ensures we get the details right. Here are the instructions for the CUSTOMER STATS and SHARE TEMPLATE tabs, using your preferred format. 11. CUSTOMER STATS (Private Analytics) 🔒 Purpose: This private tab is for 86th Avenue only, providing key statistics and behavioral data. This tab must be Protected/Owner Only. A -- Total Customers Registered -- Formula -- =COUNTA('03_CUSTOMER_REGISTRY'!B:B)-1 (Counts all entries in the name column, subtracting the header row.) B -- Total Paid Customers -- Formula -- =COUNTIF('03_CUSTOMER_REGISTRY'!J:J, "PAID") (Counts confirmed paid slots.) C -- Total 7.5% Markup Earned (P) -- Formula -- =TEXT(SUM(ARRAYFORMULA(VALUE(SUBSTITUTE('07_OWNER_PROFIT_AUDIT'!C:C, "P ", "")))), "P #,##0.00") (Sums your entire 7.5% profit across all sales.) D -- Total P100 Fees Earned (P) -- Formula -- =TEXT(SUM(ARRAYFORMULA(VALUE(SUBSTITUTE('07_OWNER_PROFIT_AUDIT'!E:E, "P ", "")))), "P #,##0.00") (Sums your P100 Motshelo Processing Fees.) E -- Most Popular Animal (Based on Sales) -- Formula -- =IFERROR(INDEX(QUERY('03_CUSTOMER_REGISTRY'!A:H, "SELECT H, COUNT(H) WHERE H IS NOT NULL GROUP BY H ORDER BY COUNT(H) DESC LIMIT 1"), 2, 1), "....") (Queries the Registry to find the Beast ID with the highest number of paid transactions.) F -- Top City for Sales -- Formula -- =IFERROR(INDEX(QUERY('03_CUSTOMER_REGISTRY'!A:D, "SELECT D, COUNT(D) WHERE D IS NOT NULL GROUP BY D ORDER BY COUNT(D) DESC LIMIT 1"), 2, 1), "....") (Queries the Registry to find the city with the highest number of customer registrations.) 6. SHARE TEMPLATE (Share Mode Helper) 🔒 Purpose: This hidden tab calculates the exact number of Small Shares available based on the fixed Large and Medium Share allocations. This data is pulled by the ANIMAL LISTING & PRICING tab. This sheet should be Protected/Owner Only and ideally hidden. A -- Beast ID -- Formula -- ='02_ANIMAL_LISTING_PRICING'!D2 (Links the Animal ID.) B -- Total Carcass Weight (KG) -- Formula -- ='02_ANIMAL_LISTING_PRICING'!F2 (Links the raw weight for calculation.) C -- Large Slots (10kg) (Fixed) -- Fixed Value -- 10 (Your golden rule: 10 maximum slots for large share.) D -- Medium Slots (5kg) (Fixed) -- Fixed Value -- 15 (Your golden rule: 15 maximum slots for medium share.) E -- KG Used by Large/Med -- Formula -- =C2*10+D2*5 (Calculates the weight consumed by the fixed large and medium slots.) F -- KG Remaining for Small (KG) -- Formula -- =IF(ISBLANK(B2), "....", TEXT(MAX(0, B2-E2), "#0kg")) (Calculates the remaining weight and formats it as KG. MAX(0,...) ensures no negative numbers.) G -- Small Slots (2.5kg) -- Formula -- =IF(B2-E2<=0, 0, FLOOR((B2-E2)/2.5)) (Calculates the final number of 2.5kg slots by dividing the remaining raw weight by 2.5, using FLOOR to round down to a whole number.) H -- Total Slots Created -- Formula -- =IF(ISBLANK(A2), "....", C2+D2+G2) (The total number of slots created, pulled into the ANIMAL LISTING & PRICING tab.) We have three tabs remaining: MASTER DATA, SUPPLIER BUSINESS, and STOCK INVENTORY. Which one would you like to build out next? -------- That seals the deal! We've systematically constructed the formulas for 11 of the 12 tabs. I'm confident this setup will work exactly as you've planned—nice nice neh! 😉 Here are the details for the final two tabs. 8️⃣ SUPPLIER BUSINESS (Row 2 Formulas) Purpose: A directory of businesses that supply animals and/or services (abattoirs, refrigeration, transport). A -- Suppliery Company Name -- Input -- Input (light grey: '... enter name') B -- Business Type -- Input -- Input (light grey: '... e.g., Abattoir, Transporter') C -- Date Registered on Platform -- Formula/Input -- =IF(ISBLANK(A2), "....", TEXT(TODAY(), "YYYY-MM-DD")) D -- Email -- Input -- Input (light grey: '... business email') E -- Facebook Page Link -- Input -- Input (light grey: '... FB page URL') F -- Landline -- Input -- Input (light grey: '... landline number') G -- Company Mobile Call -- Input -- Input (light grey: '... mobile number') H -- WhatsApp Number -- Input -- Input (light grey: '... WhatsApp number') I -- Mascom Myzaka Number -- Input -- Input (light grey: '... Myzaka number') J -- Orange Money Number -- Input -- Input (light grey: '... Orange Money number') K -- BTC Smega Number -- Input -- Input (light grey: '... Smega number') L -- Town/City -- Input -- Dropdown (light grey: '... select town') M -- Area/Neighbourhood -- Input -- Dropdown (light grey: '... select area') N -- Plot Number -- Input -- Input (light grey: '... plot number') O -- Contact Person -- Input -- Input (light grey: '... contact person name') P -- Contact Number (Mobile) -- Input -- Input (light grey: '... contact mobile') 12. STOCK INVENTORY (Butchery Stock) (Row 2 Formulas) Purpose: Simple daily management of general stock that is sold outside of the NamaTose calculator system. A -- Date -- Input -- Input (light grey: '... YYYY-MM-DD') B -- Item / Product -- Input -- Input (light grey: '... e.g., T-Bone Steaks, Mince') C -- Quantity Received (KG) -- Input -- Input (light grey: '... weight in kg') D -- Quantity Sold (KG) -- Input -- Input (light grey: '... weight in kg') E -- Remaining Stock (KG) -- Formula -- =IF(OR(ISBLANK(C2), ISBLANK(D2)), "....", TEXT(C2-D2, "#0kg")) (Formats the difference to show KG.) F -- Notes -- Input -- Input (light grey: '... notes on batch') 13. MASTER DATA (Final Step Remaining) We have covered 11 of the 12 tabs. The MASTER DATA tab is the last one, and it is crucial because it holds all the static lists for the dropdown menus across the entire system. Please confirm if you would like the structure for the MASTER DATA tab now so your formulas for dropdowns (like Town/City and Payment Status) work correctly. Once that is done, you will have the complete, detailed plan for all 12 tabs! ------- 
+
+ChatGPT said:
+Got you. Below is a fully working single-page mobile web app prototype for Namatose, built around:
+• Very light grey background
+• White cards
+• 4px light border at ~70% opacity
+• 3px soft corners
+• 4 structural levels (Top Header → Sum Header → Note Body → Bottom Nav)
+• Offline-first structure (localStorage based)
+• Bothoflow philosophy (Notes → Items → Sum → Profile → Motshelo)
+• Slide-based single page illusion
+• Profile switching with permission tiers
+You can copy this into a single .html file and open it in Chrome on your Samsung A14.
+✅ FEATURES INCLUDED
+• Login screen (any input logs in as Browser)
+• 6 Profiles:
+• Man (User)
+• Woman (User)
+• Butcher Vendor
+• Refrigeration Vendor
+• Grocery Vendor
+• Developer Admin
+• Motshelo Manager
+• Switch Profile button
+• Live User Sum Card with Budget limit
+• 7 Preloaded Sums (weekly, monthly, family, diet etc.)
+• 20 Stores (dummy vendors)
+• 20+ Items with images
+• Create / Edit Item (photo upload supported)
+• Add to Sum
+• Expandable Notes (accordion)
+• WhatsApp deep links
+• Facebook gallery links
+• Offline storage
+• Slide-up Profile panel
+• Infinite-feel horizontal slide
+
+Perfect. We’re going deep now.
+Below is the Full Motshelo Voting State Machine Logic, followed by the Database Model that respects your core architecture:
+ITEMS → NOTES → SUMS
++
+MOTSHELO as a Community-Controlled Financial Engine
+Everything structured for an offline-first HTML Android PWA.
+🧠 PART 1 — FULL MOTSHELO VOTING STATE MACHINE
+This is deterministic logic. No ambiguity. No Excel logic. Pure state transitions.
+I. CORE ENTITIES IN MOTSHELO
+MotsheloGroup
+MotsheloMember
+ContributionLedger
+VoteSession
+Vote
+ReservationSlot
+BorrowRequest
+Confirmation
+TransactionLog
+II. MOTSHELO GROUP STATE MACHINE
+Group Lifecycle States
+DRAFT LOCKED ACTIVE VOTING RESERVING FUNDED READY_TO_EXECUTE EXECUTED CLOSED 
+1️⃣ GROUP CREATION
+State: DRAFT
+Conditions:
+• Created by Motshelo Manager
+• < 10 members
+Transition:
+If member_count >= 10
+→ LOCKED
+2️⃣ LOCKED STATE
+Meaning:
+• Group meets minimum threshold (10–50 members)
+• Can now start votes
+Manager can:
+• Start VoteSession
+• Open Contribution Cycle
+Transition:
+If contribution cycle active
+→ ACTIVE
+3️⃣ ACTIVE STATE
+Group collecting contributions.
+Members:
+• Add contribution entry
+• Confirm manual payment
+• View ledger
+If Manager creates VoteSession
+→ VOTING
+III. VOTE SESSION STATE MACHINE
+VoteSession Type:
+• Animal Purchase
+• Grocery Bulk
+• Borrow Request
+• Service Booking
+VoteSession States
+PROPOSED OPEN QUORUM_REACHED APPROVED REJECTED RESERVATION_OPEN FULL READY_TO_EXECUTE CANCELLED EXECUTED 
+1️⃣ PROPOSED
+Created by:
+• Manager OR Member (if allowed)
+Contains:
+• Linked Note
+• Linked Items
+• Estimated Total Cost
+• Share Structure
+• Deadline
+Transition:
+Manager activates
+→ OPEN
+2️⃣ OPEN
+Members cast votes:
+Vote Types:
+• YES
+• NO
+• ABSTAIN
+Conditions for quorum:
+minimum_votes >= ceil(total_members * 0.5) 
+Transition:
+If YES > 50% AND quorum met
+→ APPROVED
+If NO > 50%
+→ REJECTED
+3️⃣ APPROVED
+If vote type = Animal or Grocery
+→ RESERVATION_OPEN
+If vote type = Borrow
+→ READY_FOR_CONFIRMATION
+IV. RESERVATION ENGINE (FOR ANIMAL/GROCERY)
+State: RESERVATION_OPEN
+Slots generated from:
+Linked Item share logic:
+• Divide Mode
+• Share Mode
+• Large
+• Medium
+• Small
+Members reserve slot:
+Transition:
+If reserved_slots == total_slots
+→ FULL
+4️⃣ FULL
+Now system checks:
+Funds Available >= Total Cost ?
+If YES
+→ READY_TO_EXECUTE
+If NO
+→ remains FULL but flagged UNDERFUNDED
+5️⃣ READY_TO_EXECUTE
+Requires:
+4 independent confirmations:
+unique_confirmations >= 4 
+Confirmers cannot:
+• Be same person
+• Confirm twice
+Transition:
+If confirmations >= 4
+→ EXECUTED
+6️⃣ EXECUTED
+System:
+• Deducts contributions
+• Logs transaction
+• Closes VoteSession
+• Updates group animal history
+• Triggers P100 processing logic (if vendor)
+V. BORROW REQUEST STATE MACHINE
+BorrowRequest States:
+REQUESTED VOTING APPROVED CONFIRMING DISBURSED REPAYING CLOSED DEFAULTED 
+REQUESTED
+Member submits:
+• Amount
+• Repayment schedule
+• Reason
+Manager opens vote
+→ VOTING
+APPROVED
+After vote success
+→ CONFIRMING
+Requires:
+4 confirmations
+DISBURSED
+Funds released manually.
+Transaction logged.
+Repayment schedule activated.
+REPAYING
+Each payment logged.
+If balance == 0
+→ CLOSED
+If overdue beyond threshold
+→ DEFAULTED
+VI. CONFIRMATION ENGINE (Critical Rule)
+Confirmation table:
+• vote_session_id
+• confirmer_user_id
+• timestamp
+• type (execution / borrow_release / repayment)
+Validation rule:
+count(unique_confirmers) >= 4 
+Cannot include:
+• Proposal creator
+• Beneficiary (in borrow case)
+VII. MOTSHELO TRANSACTION LOG
+Every financial action logged:
+• contribution
+• reservation
+• execution
+• borrow
+• repayment
+• fee
+Immutable.
+🧱 PART 2 — DATABASE MODEL
+Designed for:
+Offline first
+IndexedDB / SQLite
+JSON-based
+And must reflect:
+ITEM → NOTE → SUM hierarchy.
+CORE ARCHITECTURE
+User
+Profile
+Note
+Item
+Sum
+Plus:
+MotsheloGroup
+VoteSession
+BorrowRequest
+1️⃣ USERS
+users - id (uuid) - first_name - whatsapp - role - created_at 
+2️⃣ PROFILES
+profiles - id - user_id - profile_type - permissions_json 
+3️⃣ SUMS
+sums - id - user_id - name - budget - total - schedule_type (daily/weekly/monthly) - created_at 
+4️⃣ NOTES
+Notes belong to Sums.
+notes - id - sum_id - title - type (meat/grocery/motshelo/vendor) - collapsed (boolean) 
+5️⃣ ITEMS
+Items belong to Notes.
+items - id - note_id - vendor_id (nullable) - name - image_url - price - unit - tags_json - share_type (divide/share/none) - total_slots - created_by 
+6️⃣ SUM_ITEMS (Bridge)
+Tracks what is added into a Sum.
+sum_items - id - sum_id - item_id - quantity - calculated_total 
+7️⃣ MOTSHELO GROUPS
+motshelo_groups - id - name - manager_id - state - contribution_cycle - created_at 
+8️⃣ MOTSHELO MEMBERS
+motshelo_members - id - group_id - user_id - joined_at 
+9️⃣ CONTRIBUTIONS
+contributions - id - group_id - user_id - amount - week_number - confirmed_by_count - timestamp 
+🔟 VOTE SESSIONS
+vote_sessions - id - group_id - note_id - type - state - total_cost - total_slots - deadline - created_by 
+11️⃣ VOTES
+votes - id - vote_session_id - user_id - vote_type (yes/no/abstain) - timestamp 
+12️⃣ RESERVATIONS
+reservations - id - vote_session_id - user_id - slot_type - timestamp 
+13️⃣ BORROW REQUESTS
+borrow_requests - id - group_id - user_id - amount - repayment_plan_json - state - created_at 
+14️⃣ CONFIRMATIONS
+confirmations - id - related_id - related_type (vote/borrow/repayment) - confirmer_user_id - timestamp 
+15️⃣ TRANSACTION LOG
+transactions - id - group_id - type - reference_id - amount - timestamp 
+🔒 CRITICAL RULES BUILT INTO DATABASE
+• No execution without 4 confirmations
+• No slot overbooking
+• No vote approval without quorum
+• No borrow disbursement without approval
+• All transactions immutable
+FINAL STRUCTURAL TRUTH
+Everything still follows:
+User
+→ Profile
+→ Sum
+→ Note
+→ Item
+Motshelo integrates as:
+Group
+→ VoteSession
+→ Note
+→ Item
+→ Reservation
+→ Execution
+Same logic structure.
+Bothoflow preserved.

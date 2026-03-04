@@ -1,0 +1,2060 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="theme-color" content="#0f2417">
+<title>Namatose</title>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+/* ═══════════════════════════════════════════════
+   NAMATOSE — Design System
+   Bothoflow™ Architecture — Paphani Masalila
+═══════════════════════════════════════════════ */
+:root {
+  --ink:         #0f1a13;
+  --forest:      #1a4228;
+  --leaf:        #2d6a44;
+  --sage:        #4a9463;
+  --mint:        #7cc49a;
+  --mist:        #f0f4f1;
+  --fog:         #e8ede9;
+  --white:       #ffffff;
+  --gold:        #c8922a;
+  --ember:       #d45f1e;
+  --crimson:     #b83030;
+  --sky:         #1a6bb5;
+  --border:      rgba(26,66,40,0.12);
+  --border-med:  rgba(26,66,40,0.2);
+  --shadow-sm:   0 1px 4px rgba(15,26,19,0.08);
+  --shadow-md:   0 4px 16px rgba(15,26,19,0.12);
+  --shadow-lg:   0 12px 40px rgba(15,26,19,0.18);
+  --r-sm:        8px;
+  --r-md:        12px;
+  --r-lg:        18px;
+  --r-xl:        24px;
+}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+html,body{height:100%;overflow:hidden}
+body{
+  background:var(--mist);
+  font-family:'Sora',sans-serif;
+  font-size:14px;
+  color:var(--ink);
+  -webkit-font-smoothing:antialiased;
+}
+body.panel-open{overflow:hidden}
+
+/* ── UTILITY ── */
+.mono{font-family:'Space Mono',monospace}
+.green{color:var(--leaf)}
+.gold{color:var(--gold)}
+.red{color:var(--crimson)}
+.muted{color:#6b7c71}
+.bold{font-weight:700}
+.flex{display:flex;align-items:center}
+.gap4{gap:4px}.gap8{gap:8px}.gap12{gap:12px}
+.sb{justify-content:space-between}
+
+/* ══════════════ SCREENS ══════════════ */
+.screen{display:none;flex-direction:column;height:100vh;overflow:hidden}
+.screen.active{display:flex}
+
+/* ══════════════ LOGIN ══════════════ */
+#loginScreen{
+  background:var(--forest);
+  background-image:
+    radial-gradient(ellipse 80% 60% at 20% 80%,rgba(74,148,99,0.2) 0%,transparent 60%),
+    radial-gradient(ellipse 60% 80% at 80% 20%,rgba(200,146,42,0.12) 0%,transparent 50%);
+  justify-content:center;align-items:center;padding:24px;overflow-y:auto;
+}
+.login-wrap{width:100%;max-width:400px}
+.login-brand{text-align:center;margin-bottom:32px}
+.login-brand .logo-mark{
+  width:72px;height:72px;background:rgba(255,255,255,0.1);
+  border:2px solid rgba(255,255,255,0.2);border-radius:20px;
+  display:flex;align-items:center;justify-content:center;
+  font-size:34px;margin:0 auto 16px;
+  box-shadow:0 8px 32px rgba(0,0,0,0.3);
+}
+.login-brand h1{font-size:32px;font-weight:900;color:#fff;letter-spacing:2px}
+.login-brand .tagline{font-size:11px;color:rgba(255,255,255,0.5);letter-spacing:2px;text-transform:uppercase;margin-top:4px}
+.login-card{
+  background:rgba(255,255,255,0.97);border-radius:var(--r-xl);
+  padding:28px 24px;box-shadow:var(--shadow-lg);
+}
+.login-card h2{font-size:17px;font-weight:800;color:var(--forest);margin-bottom:4px}
+.login-card .sub{font-size:12px;color:#6b7c71;margin-bottom:24px}
+.field{margin-bottom:16px}
+.field label{
+  display:block;font-size:10px;font-weight:700;color:#6b7c71;
+  text-transform:uppercase;letter-spacing:0.8px;margin-bottom:6px;
+}
+.field input,.field select,.field textarea{
+  width:100%;padding:13px 14px;
+  border:1.5px solid var(--border);border-radius:var(--r-sm);
+  font-family:'Sora',sans-serif;font-size:14px;
+  background:#fafbfa;color:var(--ink);outline:none;
+  transition:border-color 0.2s,background 0.2s;
+}
+.field input:focus,.field select:focus,.field textarea:focus{
+  border-color:var(--leaf);background:#fff;
+}
+.btn-login{
+  width:100%;padding:15px;
+  background:linear-gradient(135deg,var(--forest) 0%,var(--leaf) 100%);
+  color:#fff;border:none;border-radius:var(--r-sm);
+  font-family:'Sora',sans-serif;font-size:15px;font-weight:800;
+  letter-spacing:0.5px;cursor:pointer;margin-top:4px;
+  box-shadow:0 4px 20px rgba(26,66,40,0.35);
+  transition:transform 0.15s,box-shadow 0.15s;
+}
+.btn-login:active{transform:scale(0.98);box-shadow:0 2px 8px rgba(26,66,40,0.3)}
+.partners-row{display:flex;gap:8px;justify-content:center;margin-top:20px;flex-wrap:wrap}
+.partner-tag{
+  padding:5px 12px;border-radius:20px;
+  font-size:10px;font-weight:700;letter-spacing:0.3px;
+  border:1.5px solid;
+}
+.p-btc{color:#0057a8;border-color:#0057a8;background:#f0f6ff}
+.p-mascom{color:#c0060f;border-color:#c0060f;background:#fff5f5}
+.p-orange{color:#d45f1e;border-color:#d45f1e;background:#fff7f0}
+.login-footer{text-align:center;margin-top:14px;font-size:10px;color:rgba(255,255,255,0.3)}
+
+/* ══════════════ APP SHELL ══════════════ */
+#appScreen{background:var(--mist)}
+
+/* ── TOP HEADER ── */
+#topHeader{
+  background:var(--forest);color:#fff;
+  padding:12px 16px 10px;
+  display:flex;align-items:center;justify-content:space-between;
+  position:relative;z-index:90;
+  transition:transform 0.3s;
+  flex-shrink:0;
+  box-shadow:0 2px 12px rgba(0,0,0,0.25);
+}
+#topHeader.scrolled-away{transform:translateY(-100%)}
+.hdr-left{display:flex;flex-direction:column}
+.hdr-logo{font-size:18px;font-weight:900;letter-spacing:1.5px}
+.hdr-page{font-size:10px;opacity:0.6;text-transform:uppercase;letter-spacing:1.5px;margin-top:1px}
+.hdr-right{display:flex;gap:8px}
+.ico-btn{
+  width:36px;height:36px;border-radius:50%;
+  border:none;background:rgba(255,255,255,0.12);
+  color:#fff;font-size:16px;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;
+  transition:background 0.2s;
+}
+.ico-btn:hover{background:rgba(255,255,255,0.22)}
+
+/* ── SUM HEADER ── */
+#sumHeader{
+  background:var(--white);
+  border-bottom:1.5px solid var(--border);
+  flex-shrink:0;
+  box-shadow:var(--shadow-sm);
+  position:relative;z-index:80;
+}
+.sum-bar{
+  padding:10px 16px;
+  display:flex;align-items:center;justify-content:space-between;
+  cursor:pointer;
+}
+.sum-bar-left h3{font-size:12px;font-weight:700;color:var(--leaf)}
+.sum-bar-left .sum-name-text{font-size:10px;color:#6b7c71;margin-top:1px}
+.sum-bar-right{display:flex;gap:14px}
+.sum-fig{text-align:right}
+.sum-fig .val{font-size:16px;font-weight:800;color:var(--ink);font-family:'Space Mono',monospace}
+.sum-fig .lbl{font-size:9px;color:#6b7c71;text-transform:uppercase;letter-spacing:0.5px}
+.sum-expanded{display:none;padding:0 16px 14px}
+.sum-expanded.open{display:block}
+.budget-track{height:5px;background:var(--fog);border-radius:3px;margin:6px 0 12px;overflow:hidden}
+.budget-fill{height:100%;border-radius:3px;transition:width 0.5s cubic-bezier(0.34,1.56,0.64,1)}
+.sum-item-rows{max-height:160px;overflow-y:auto}
+.sir{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:6px 0;border-bottom:1px solid var(--border);font-size:12px;
+}
+.sir:last-child{border-bottom:none}
+.sir .si-name{color:var(--ink);font-weight:500}
+.sir .si-price{font-weight:800;color:var(--leaf);font-family:'Space Mono',monospace}
+.sir .si-del{background:none;border:none;color:var(--crimson);font-size:18px;cursor:pointer;padding:0 0 0 8px;line-height:1}
+.sum-actions{display:flex;gap:7px;margin-top:10px}
+.sbtn{padding:8px 14px;border-radius:7px;font-family:'Sora',sans-serif;font-size:11px;font-weight:700;border:none;cursor:pointer;transition:all 0.15s}
+.sbtn-ghost{background:transparent;border:1.5px solid var(--border-med);color:var(--leaf)}
+.sbtn-fill{background:var(--leaf);color:#fff}
+.sbtn-wa{background:#1aad2b;color:#fff}
+.sum-empty-msg{font-size:12px;color:#6b7c71;text-align:center;padding:10px 0}
+
+/* ── NOTE BODY (scrollable) ── */
+#noteBody{flex:1;overflow-y:auto;padding:12px 12px 80px;-webkit-overflow-scrolling:touch}
+.view{display:none}
+.view.active{display:block}
+
+/* ── BOTTOM NAV ── */
+#bottomNav{
+  position:fixed;bottom:0;left:0;right:0;
+  background:var(--white);
+  border-top:1.5px solid var(--border);
+  display:flex;z-index:90;
+}
+.nb{
+  flex:1;display:flex;flex-direction:column;align-items:center;
+  justify-content:center;padding:9px 4px 11px;
+  border:none;background:transparent;cursor:pointer;
+  transition:background 0.15s;
+}
+.nb:active{background:var(--fog)}
+.nb .ni{font-size:21px;line-height:1;transition:transform 0.2s}
+.nb .nl{font-size:9px;font-weight:700;color:#6b7c71;margin-top:3px;text-transform:uppercase;letter-spacing:0.4px;font-family:'Sora',sans-serif}
+.nb.on .nl{color:var(--leaf)}
+.nb.on .ni{transform:scale(1.1)}
+
+/* ══════════════ CARDS ══════════════ */
+.card{
+  background:var(--white);
+  border:1.5px solid var(--border);
+  border-radius:var(--r-md);
+  margin-bottom:9px;
+  overflow:hidden;
+  box-shadow:var(--shadow-sm);
+}
+.card-hdr{
+  padding:12px 14px;
+  display:flex;align-items:center;justify-content:space-between;
+  cursor:pointer;
+  -webkit-user-select:none;user-select:none;
+}
+.card-hdr-l{display:flex;align-items:center;gap:10px}
+.card-hdr-l .cat-emoji{font-size:20px;width:32px;text-align:center}
+.card-hdr-l h3{font-size:14px;font-weight:800;color:var(--ink)}
+.card-hdr-l .meta{font-size:10px;color:#6b7c71;margin-top:1px}
+.card-hdr-r{display:flex;align-items:center;gap:8px}
+.item-count-badge{
+  background:var(--fog);color:var(--leaf);
+  font-size:10px;font-weight:700;padding:2px 8px;border-radius:20px;
+}
+.chev{font-size:11px;color:#6b7c71;transition:transform 0.25s;display:inline-block}
+.chev.down{transform:rotate(180deg)}
+.card-body{display:none;padding:0 14px 14px}
+.card-body.open{display:block}
+
+/* ── CATEGORY PILL ROW ── */
+.pill-row{
+  display:flex;gap:7px;margin-bottom:12px;
+  overflow-x:auto;padding-bottom:4px;
+  scrollbar-width:none;
+}
+.pill-row::-webkit-scrollbar{display:none}
+.pill{
+  flex-shrink:0;padding:6px 14px;border-radius:20px;
+  font-size:11px;font-weight:700;cursor:pointer;
+  border:1.5px solid var(--border-med);
+  background:var(--white);color:var(--leaf);
+  transition:all 0.15s;
+  font-family:'Sora',sans-serif;
+}
+.pill.on{background:var(--leaf);color:#fff;border-color:var(--leaf)}
+.pill-add{background:var(--ember);color:#fff;border-color:var(--ember)}
+
+/* ── ITEMS GRID ── */
+.items-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:8px}
+.ic{
+  background:var(--fog);border:1.5px solid var(--border);
+  border-radius:var(--r-sm);overflow:hidden;cursor:pointer;
+  transition:transform 0.12s;
+}
+.ic:active{transform:scale(0.96)}
+.ic-img{
+  height:80px;display:flex;align-items:center;justify-content:center;
+  font-size:36px;background:var(--fog);overflow:hidden;
+}
+.ic-img img{width:100%;height:100%;object-fit:cover}
+.ic-info{padding:8px 8px 7px}
+.ic-name{font-size:12px;font-weight:700;color:var(--ink);line-height:1.3}
+.ic-price{font-size:13px;font-weight:800;color:var(--leaf);font-family:'Space Mono',monospace;margin-top:3px}
+.ic-unit{font-size:9px;color:#6b7c71}
+.ic-vendor{font-size:9px;color:#6b7c71;margin-top:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.slot-bar{margin:3px 0 0;height:3px;background:#dde8e0;border-radius:2px;overflow:hidden}
+.slot-fill{height:100%;background:var(--gold);border-radius:2px}
+.slot-txt{font-size:9px;color:var(--gold);font-weight:700;margin-top:1px}
+
+/* ── VENDOR STRIP ── */
+.vendor-strip{margin-top:12px}
+.vs-label{font-size:10px;font-weight:700;color:#6b7c71;text-transform:uppercase;letter-spacing:0.8px;margin-bottom:6px}
+.vr{
+  display:flex;align-items:center;gap:10px;
+  padding:9px 10px;background:var(--fog);
+  border:1.5px solid var(--border);border-radius:var(--r-sm);margin-bottom:6px;
+}
+.vr .vi{width:40px;height:40px;border-radius:8px;background:var(--leaf);display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0}
+.vr .vn{flex:1}
+.vr .vn h4{font-size:12px;font-weight:700}
+.vr .vn p{font-size:10px;color:#6b7c71}
+.vr .vbtns{display:flex;gap:5px}
+.wa-btn{background:#1aad2b;color:#fff;border:none;padding:6px 10px;border-radius:6px;font-size:11px;font-weight:700;cursor:pointer;display:flex;align-items:center;gap:4px}
+.fb-btn{background:#1877f2;color:#fff;border:none;padding:6px 10px;border-radius:6px;font-size:11px;font-weight:700;cursor:pointer}
+
+/* ── BEAST LISTING CARD ── */
+.beast-card{
+  background:var(--white);border:1.5px solid var(--border);
+  border-radius:var(--r-sm);margin-bottom:8px;overflow:hidden;
+}
+.beast-hdr{
+  padding:12px 12px 10px;
+  background:linear-gradient(135deg,var(--forest) 0%,var(--leaf) 100%);
+  color:#fff;
+}
+.beast-hdr .bh-id{font-size:10px;opacity:0.7;font-family:'Space Mono',monospace;margin-bottom:2px}
+.beast-hdr .bh-title{font-size:14px;font-weight:800}
+.beast-hdr .bh-sub{font-size:11px;opacity:0.8;margin-top:2px}
+.beast-stats{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1px;background:var(--border)}
+.bs-stat{background:var(--white);padding:8px;text-align:center}
+.bs-stat .bsv{font-size:13px;font-weight:800;color:var(--leaf);font-family:'Space Mono',monospace}
+.bs-stat .bsl{font-size:9px;color:#6b7c71;margin-top:1px}
+.share-rows{padding:8px 12px 12px}
+.share-row{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:8px 10px;border:1.5px solid var(--border);border-radius:7px;margin-bottom:6px;cursor:pointer;
+  transition:all 0.15s;
+}
+.share-row:hover,.share-row.picked{border-color:var(--leaf);background:var(--fog)}
+.share-row .sr-l .sr-name{font-size:12px;font-weight:700}
+.share-row .sr-l .sr-slots{font-size:10px;color:#6b7c71}
+.share-row .sr-price{font-size:14px;font-weight:800;color:var(--leaf);font-family:'Space Mono',monospace}
+.beast-footer{display:flex;gap:8px;padding:0 12px 12px}
+.beast-add-btn{flex:1;padding:10px;background:var(--leaf);color:#fff;border:none;border-radius:7px;font-family:'Sora',sans-serif;font-size:12px;font-weight:700;cursor:pointer}
+
+/* ── NOTICE CARD ── */
+.nc{
+  background:var(--white);border:1.5px solid var(--border);
+  border-radius:var(--r-sm);margin-bottom:8px;overflow:hidden;
+}
+.nc-head{display:flex;gap:11px;padding:12px 12px 10px;align-items:flex-start}
+.nc-thumb{
+  width:58px;height:58px;border-radius:8px;
+  background:var(--fog);flex-shrink:0;overflow:hidden;
+  display:flex;align-items:center;justify-content:center;font-size:28px;
+}
+.nc-thumb img{width:100%;height:100%;object-fit:cover}
+.nc-body h4{font-size:13px;font-weight:800;line-height:1.3}
+.nc-body p{font-size:11px;color:#6b7c71;margin-top:3px;line-height:1.5}
+.nc-body .nc-price{font-size:14px;font-weight:800;color:var(--leaf);font-family:'Space Mono',monospace;margin-top:5px}
+.nc-body .nc-vendor{font-size:10px;color:#6b7c71;margin-top:3px}
+.nc-foot{display:flex;gap:7px;padding:8px 12px;border-top:1px solid var(--border)}
+
+/* ── PROMO CARD ── */
+.promo-card{
+  background:linear-gradient(135deg,var(--forest) 0%,var(--leaf) 100%);
+  border-radius:var(--r-md);margin-bottom:9px;padding:16px;
+  color:#fff;position:relative;overflow:hidden;
+}
+.promo-card::before{
+  content:'';position:absolute;top:-20px;right:-20px;
+  width:100px;height:100px;border-radius:50%;
+  background:rgba(255,255,255,0.07);
+}
+.promo-card .pc-badge{
+  display:inline-block;background:var(--gold);color:#fff;
+  font-size:11px;font-weight:800;padding:3px 10px;
+  border-radius:20px;margin-bottom:8px;
+}
+.promo-card h4{font-size:15px;font-weight:800;margin-bottom:4px}
+.promo-card p{font-size:12px;opacity:0.8;margin-bottom:10px;line-height:1.5}
+.promo-card .pc-code{
+  background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.3);
+  border-radius:6px;padding:6px 12px;display:inline-block;
+  font-family:'Space Mono',monospace;font-size:13px;font-weight:700;
+  letter-spacing:1px;
+}
+.promo-card .pc-share{
+  float:right;background:rgba(255,255,255,0.15);border:none;color:#fff;
+  padding:7px 12px;border-radius:7px;font-size:11px;font-weight:700;cursor:pointer;
+  font-family:'Sora',sans-serif;
+}
+
+/* ══════════════ PROFILE PAGE ══════════════ */
+.profile-hero{
+  background:linear-gradient(135deg,var(--forest) 0%,var(--leaf) 60%,var(--sage) 100%);
+  padding:20px 16px 16px;display:flex;align-items:center;gap:14px;
+  position:relative;
+}
+.profile-hero::after{
+  content:'';position:absolute;bottom:0;left:0;right:0;height:1px;
+  background:rgba(255,255,255,0.1);
+}
+.pic-wrap{position:relative;cursor:pointer;flex-shrink:0}
+.pic-circle{
+  width:70px;height:70px;border-radius:50%;
+  border:3px solid rgba(255,255,255,0.4);
+  background:rgba(255,255,255,0.15);
+  display:flex;align-items:center;justify-content:center;
+  font-size:30px;overflow:hidden;
+}
+.pic-circle img{width:100%;height:100%;object-fit:cover}
+.pic-edit-badge{
+  position:absolute;bottom:1px;right:1px;
+  width:22px;height:22px;border-radius:50%;
+  background:var(--gold);display:flex;align-items:center;
+  justify-content:center;font-size:11px;border:2px solid var(--white);
+}
+.hero-info{flex:1}
+.hero-info h2{font-size:20px;font-weight:900;color:#fff;letter-spacing:0.3px}
+.hero-info .hero-role{
+  display:inline-flex;align-items:center;gap:5px;
+  background:rgba(255,255,255,0.15);border-radius:20px;
+  padding:3px 10px;font-size:10px;font-weight:700;color:rgba(255,255,255,0.9);
+  margin-top:5px;
+}
+.hero-info .hero-loc{font-size:11px;color:rgba(255,255,255,0.6);margin-top:4px}
+
+.psect{
+  background:var(--white);border:1.5px solid var(--border);
+  border-radius:var(--r-md);margin-bottom:9px;overflow:hidden;
+}
+.psect-hdr{
+  padding:12px 14px;display:flex;align-items:center;justify-content:space-between;
+  cursor:pointer;
+}
+.psect-hdr h3{font-size:13px;font-weight:800;display:flex;align-items:center;gap:8px}
+.psect-body{display:none;padding:0 14px 14px}
+.psect-body.open{display:block}
+
+.save-row{margin-top:12px}
+.save-btn{
+  width:100%;padding:12px;background:var(--leaf);color:#fff;border:none;
+  border-radius:var(--r-sm);font-family:'Sora',sans-serif;font-size:14px;font-weight:700;cursor:pointer;
+  transition:background 0.2s;
+}
+.save-btn:active{background:var(--forest)}
+
+/* Permission list */
+.perm-list{list-style:none;margin-top:2px}
+.perm-list li{
+  display:flex;align-items:flex-start;gap:8px;
+  padding:6px 0;border-bottom:1px solid var(--border);font-size:12px;
+}
+.perm-list li:last-child{border-bottom:none}
+.pi{font-size:13px;flex-shrink:0;margin-top:1px}
+.bothoflow-note{
+  background:var(--fog);border:1.5px solid var(--border);border-radius:var(--r-sm);
+  padding:10px 12px;margin-top:10px;font-size:11px;color:#6b7c71;line-height:1.6;
+}
+
+/* Saved sums rows */
+.ss-row{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:9px 0;border-bottom:1px solid var(--border);
+}
+.ss-row:last-child{border-bottom:none}
+.ss-row .ss-name{font-size:13px;font-weight:700}
+.ss-row .ss-meta{font-size:10px;color:#6b7c71}
+.ss-row .ss-load{
+  padding:6px 12px;background:var(--leaf);color:#fff;
+  border:none;border-radius:6px;font-family:'Sora',sans-serif;
+  font-size:11px;font-weight:700;cursor:pointer;
+}
+
+/* ══════════════ MOTSHELO ══════════════ */
+.mot-hero{
+  background:linear-gradient(135deg,#0a2415,var(--forest));
+  color:#fff;padding:14px;
+}
+.mot-hero h3{font-size:16px;font-weight:900;letter-spacing:0.3px}
+.mot-hero p{font-size:11px;opacity:0.7;margin-top:2px}
+.mot-state-badge{
+  display:inline-block;padding:3px 10px;border-radius:20px;
+  font-size:10px;font-weight:800;letter-spacing:0.5px;margin-top:6px;
+}
+.st-active{background:rgba(124,196,154,0.2);color:#7cc49a;border:1px solid rgba(124,196,154,0.4)}
+.st-voting{background:rgba(200,146,42,0.2);color:#c8922a;border:1px solid rgba(200,146,42,0.4)}
+.st-locked{background:rgba(180,48,48,0.2);color:#e06060;border:1px solid rgba(180,48,48,0.4)}
+.st-funded{background:rgba(26,107,181,0.2);color:#5aabf5;border:1px solid rgba(26,107,181,0.4)}
+
+.mot-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border)}
+.mst{background:var(--white);padding:10px 8px;text-align:center}
+.mst .mv{font-size:16px;font-weight:900;color:var(--leaf);font-family:'Space Mono',monospace}
+.mst .ml{font-size:9px;color:#6b7c71;margin-top:2px;text-transform:uppercase;letter-spacing:0.4px}
+
+/* Motshelo tabs */
+.mtabs{display:flex;background:var(--fog);border-bottom:1.5px solid var(--border)}
+.mtab{
+  flex:1;padding:10px 4px;text-align:center;font-size:11px;font-weight:700;
+  color:#6b7c71;cursor:pointer;border-bottom:2.5px solid transparent;
+  margin-bottom:-1.5px;transition:all 0.15s;font-family:'Sora',sans-serif;
+}
+.mtab.on{color:var(--leaf);border-bottom-color:var(--leaf);background:var(--white)}
+
+.mem-row{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:10px 14px;border-bottom:1px solid var(--border);
+}
+.mem-row:last-child{border-bottom:none}
+.mem-row .mn{font-size:13px;font-weight:700}
+.mem-row .msub{font-size:10px;color:#6b7c71;margin-top:1px}
+.mem-row .mamount{font-weight:800;color:var(--leaf);font-family:'Space Mono',monospace;font-size:13px}
+.mem-row .mstatus{font-size:9px;margin-top:2px}
+.paid{color:var(--sage)}
+.unpaid{color:var(--crimson)}
+
+.vote-box{
+  background:#fffbf0;border:1.5px solid #e8d080;
+  border-radius:var(--r-sm);margin:10px 14px;padding:12px;
+}
+.vote-box h4{font-size:13px;font-weight:800;margin-bottom:6px}
+.vote-meta p{font-size:12px;color:#6b7c71;line-height:1.8}
+.vote-progress{
+  display:flex;justify-content:space-around;
+  background:var(--fog);border-radius:7px;padding:10px;margin:10px 0;
+}
+.vp-item{text-align:center}
+.vp-item .vv{font-size:18px;font-weight:900}
+.vp-item .vl{font-size:9px;color:#6b7c71;text-transform:uppercase;letter-spacing:0.5px;margin-top:1px}
+.vyes{color:var(--sage)} .vno{color:var(--crimson)} .vabs{color:#6b7c71}
+.vote-btns{display:flex;gap:7px}
+.vbtn{flex:1;padding:10px 4px;border:none;border-radius:7px;font-family:'Sora',sans-serif;font-size:12px;font-weight:800;cursor:pointer}
+.vbtn-yes{background:var(--leaf);color:#fff}
+.vbtn-no{background:var(--crimson);color:#fff}
+.vbtn-abs{background:#e8e8e8;color:#555}
+
+.borrow-card{
+  background:var(--white);border:1.5px solid var(--border);
+  border-radius:var(--r-sm);padding:12px;margin-bottom:8px;
+}
+.borrow-card h4{font-size:13px;font-weight:700}
+.borrow-card p{font-size:11px;color:#6b7c71;margin-top:3px}
+.confirms{display:flex;gap:5px;margin-top:8px}
+.conf-dot{
+  width:24px;height:24px;border-radius:50%;border:1.5px solid var(--border);
+  background:var(--fog);display:flex;align-items:center;justify-content:center;
+  font-size:10px;font-weight:700;color:#6b7c71;
+}
+.conf-dot.done{background:var(--leaf);border-color:var(--leaf);color:#fff}
+.conf-dot.need{background:var(--fog);border-color:var(--border-med);color:#aaa}
+
+/* KPI Dashboard */
+.kpi-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:12px}
+.kpi-box{
+  background:var(--fog);border:1.5px solid var(--border);
+  border-radius:var(--r-sm);padding:12px 10px;
+}
+.kpi-box .kv{font-size:19px;font-weight:900;color:var(--leaf);font-family:'Space Mono',monospace}
+.kpi-box .kl{font-size:10px;color:#6b7c71;margin-top:2px;line-height:1.3}
+.kpi-box .kt{font-size:10px;color:var(--sage);font-weight:700;margin-top:5px}
+.kpi-heatmap{padding:12px}
+.hm-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:3px;margin-top:6px}
+.hm-cell{aspect-ratio:1;border-radius:3px}
+.hm0{background:#e8ede9} .hm1{background:#b8d8c4} .hm2{background:#7cc49a} .hm3{background:#4a9463} .hm4{background:#1a5c2e}
+
+/* ══════════════ INVENTORY TRACKING ══════════════ */
+.inv-card{
+  background:var(--white);border:1.5px solid var(--border);
+  border-radius:var(--r-sm);margin-bottom:8px;overflow:hidden;
+}
+.inv-hdr{padding:10px 12px;background:var(--fog);border-bottom:1.5px solid var(--border);display:flex;align-items:center;justify-content:space-between}
+.inv-hdr h4{font-size:12px;font-weight:800}
+.inv-body{padding:10px 12px}
+.inv-row{display:flex;justify-content:space-between;padding:5px 0;border-bottom:1px solid var(--border);font-size:12px}
+.inv-row:last-child{border-bottom:none}
+.inv-row .ir-l{color:#6b7c71}
+.inv-row .ir-v{font-weight:700}
+.status-full{background:#fde8e8;color:var(--crimson);padding:2px 8px;border-radius:20px;font-size:9px;font-weight:800}
+.status-open{background:#e8f5ec;color:var(--leaf);padding:2px 8px;border-radius:20px;font-size:9px;font-weight:800}
+.status-ready{background:#fff3e0;color:var(--gold);padding:2px 8px;border-radius:20px;font-size:9px;font-weight:800}
+
+/* ══════════════ OVERLAYS & PANELS ══════════════ */
+.overlay{
+  position:fixed;inset:0;background:rgba(10,20,14,0.6);z-index:200;
+  display:none;backdrop-filter:blur(2px);
+}
+.overlay.show{display:block}
+
+.slide-panel{
+  position:fixed;bottom:0;left:0;right:0;
+  background:var(--white);border-radius:20px 20px 0 0;
+  padding:0 20px 40px;z-index:210;
+  transform:translateY(100%);
+  transition:transform 0.38s cubic-bezier(0.32,0.72,0,1);
+  max-height:92vh;overflow-y:auto;
+}
+.slide-panel.open{transform:translateY(0)}
+.panel-handle{width:36px;height:4px;background:var(--border-med);border-radius:2px;margin:14px auto 18px}
+.panel-title{font-size:17px;font-weight:900;color:var(--forest);margin-bottom:16px}
+
+/* Profile switcher */
+.ps-item{
+  display:flex;align-items:center;gap:12px;
+  padding:12px 0;border-bottom:1px solid var(--border);cursor:pointer;
+  transition:background 0.15s;
+}
+.ps-item:last-child{border-bottom:none}
+.ps-item:active{background:var(--fog)}
+.ps-item.active-profile{opacity:1}
+.ps-avatar{
+  width:44px;height:44px;border-radius:12px;
+  background:var(--fog);display:flex;align-items:center;justify-content:center;
+  font-size:22px;flex-shrink:0;border:1.5px solid var(--border);
+}
+.ps-info h4{font-size:14px;font-weight:700}
+.ps-info p{font-size:11px;color:#6b7c71;margin-top:1px}
+.ps-badge{
+  margin-left:auto;padding:3px 9px;border-radius:20px;
+  font-size:10px;font-weight:800;flex-shrink:0;
+}
+.badge-user{background:#e8f5ec;color:var(--leaf)}
+.badge-vendor{background:#fff3e0;color:var(--gold)}
+.badge-admin{background:#fde8e8;color:var(--crimson)}
+.badge-manager{background:#e8f0ff;color:var(--sky)}
+.ps-check{color:var(--leaf);font-size:18px;margin-left:4px;flex-shrink:0}
+
+/* Item detail */
+.item-detail-img{
+  width:100%;height:170px;background:var(--fog);
+  border-radius:var(--r-sm);margin-bottom:14px;overflow:hidden;
+  display:flex;align-items:center;justify-content:center;font-size:70px;
+}
+.item-detail-img img{width:100%;height:100%;object-fit:cover}
+.det-row{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--border);font-size:13px}
+.det-row:last-child{border-bottom:none}
+.det-row .dl{color:#6b7c71}
+.det-row .dv{font-weight:700}
+.share-opts-section h4{font-size:12px;font-weight:700;color:#6b7c71;margin:12px 0 8px;text-transform:uppercase;letter-spacing:0.5px}
+.share-opt{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:9px 11px;background:var(--fog);border:1.5px solid var(--border);
+  border-radius:var(--r-sm);margin-bottom:6px;cursor:pointer;transition:all 0.15s;
+}
+.share-opt:hover,.share-opt.sel{border-color:var(--leaf);background:#f0f8f3}
+.share-opt .so-name{font-size:12px;font-weight:700}
+.share-opt .so-slots{font-size:10px;color:#6b7c71}
+.share-opt .so-price{font-size:14px;font-weight:800;color:var(--leaf);font-family:'Space Mono',monospace}
+.payment-tags{display:flex;gap:7px;flex-wrap:wrap;margin:12px 0}
+.ptag{padding:7px 12px;border-radius:7px;font-size:11px;font-weight:700;border:1.5px solid;cursor:pointer;font-family:'Sora',sans-serif}
+.pt-cash{color:#555;border-color:#999}
+.pt-btc{color:#0057a8;border-color:#0057a8;background:#f0f6ff}
+.pt-mas{color:#c0060f;border-color:#c0060f;background:#fff5f5}
+.pt-org{color:#d45f1e;border-color:#d45f1e;background:#fff7f0}
+.det-cta{display:flex;gap:8px;margin-top:14px}
+.det-cta .add-btn{flex:2;padding:13px;background:var(--leaf);color:#fff;border:none;border-radius:var(--r-sm);font-family:'Sora',sans-serif;font-size:14px;font-weight:800;cursor:pointer}
+.det-cta .contact-btns{flex:1;display:flex;flex-direction:column;gap:5px}
+.det-cta .contact-btns button{padding:6px;border:none;border-radius:7px;font-family:'Sora',sans-serif;font-size:11px;font-weight:700;cursor:pointer}
+
+/* Create item form */
+.img-upload-area{
+  width:100%;height:110px;border:2px dashed var(--border-med);
+  border-radius:var(--r-sm);background:var(--fog);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  cursor:pointer;margin-bottom:14px;overflow:hidden;
+}
+.img-upload-area p{font-size:12px;color:#6b7c71;margin-top:6px}
+
+/* New sum form */
+.tab-row{display:flex;border-bottom:1.5px solid var(--border);margin-bottom:14px}
+.tab-item{flex:1;padding:9px;text-align:center;font-size:12px;font-weight:700;color:#6b7c71;cursor:pointer;border-bottom:2.5px solid transparent;margin-bottom:-1.5px}
+.tab-item.on{color:var(--leaf);border-bottom-color:var(--leaf)}
+
+/* ── TOAST ── */
+.toast{
+  position:fixed;bottom:86px;left:50%;
+  transform:translateX(-50%) translateY(10px);
+  background:var(--ink);color:#fff;
+  padding:10px 18px;border-radius:20px;
+  font-size:13px;font-weight:600;z-index:999;
+  opacity:0;pointer-events:none;
+  transition:all 0.25s;white-space:nowrap;
+  max-width:85vw;text-overflow:ellipsis;overflow:hidden;
+}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+
+/* ── SECTION LABELS ── */
+.section-lbl{
+  font-size:10px;font-weight:800;color:#6b7c71;
+  text-transform:uppercase;letter-spacing:1px;
+  margin:14px 2px 8px;
+}
+
+/* ── HORIZONTAL SCROLL SNEAK ── */
+.h-scroll{overflow-x:auto;display:flex;gap:9px;padding-bottom:6px;scrollbar-width:none}
+.h-scroll::-webkit-scrollbar{display:none}
+.h-scroll .hs-card{min-width:150px;flex-shrink:0}
+
+/* Stock inventory table */
+.stock-table{width:100%;font-size:11px;border-collapse:collapse;margin-top:8px}
+.stock-table th{background:var(--fog);padding:7px 8px;text-align:left;font-size:10px;color:#6b7c71;font-weight:700;border-bottom:1.5px solid var(--border)}
+.stock-table td{padding:7px 8px;border-bottom:1px solid var(--border)}
+.stock-table tr:last-child td{border-bottom:none}
+</style>
+</head>
+<body>
+
+<!-- ══ LOGIN SCREEN ══ -->
+<div class="screen active" id="loginScreen">
+  <div class="login-wrap">
+    <div class="login-brand">
+      <div class="logo-mark">🥩</div>
+      <h1>NAMATOSE</h1>
+      <p class="tagline">Community Feeds Platform · Botswana</p>
+    </div>
+    <div class="login-card">
+      <h2>Dumela 👋</h2>
+      <p class="sub">Enter any details to access the platform</p>
+      <div class="field"><label>First Name</label><input id="li_fname" type="text" placeholder="e.g. Paphani" value="Paphani"></div>
+      <div class="field"><label>WhatsApp Number</label><input id="li_wa" type="tel" placeholder="+267 7X XXX XXX" value="+267 71 234 567"></div>
+      <div class="field"><label>Password</label><input id="li_pw" type="password" placeholder="Any password to continue" value="demo2025"></div>
+      <button class="btn-login" onclick="doLogin()">ENTER NAMATOSE →</button>
+      <div class="partners-row">
+        <span class="partner-tag p-btc">🔷 BTC Smega</span>
+        <span class="partner-tag p-mascom">🔴 Mascom MyZaka</span>
+        <span class="partner-tag p-orange">🟠 Orange Money</span>
+      </div>
+    </div>
+    <p class="login-footer">© 2025 Namatose · Bothoflow™ Protected · All Rights Reserved</p>
+  </div>
+</div>
+
+<!-- ══ APP SCREEN ══ -->
+<div class="screen" id="appScreen">
+
+  <!-- TOP HEADER -->
+  <div id="topHeader">
+    <div class="hdr-left">
+      <div class="hdr-logo">🥩 NAMATOSE</div>
+      <div class="hdr-page" id="hdrPageName">Items</div>
+    </div>
+    <div class="hdr-right">
+      <button class="ico-btn" onclick="openProfileSwitcher()" title="Switch Profile">👤</button>
+      <button class="ico-btn" onclick="shareApp()" title="Share">📲</button>
+    </div>
+  </div>
+
+  <!-- SUM HEADER -->
+  <div id="sumHeader">
+    <div class="sum-bar" onclick="toggleSumExpand()">
+      <div class="sum-bar-left">
+        <h3>📊 <span id="sh_name">Weekly Household</span></h3>
+        <div class="sum-name-text" id="sh_schedule">Weekly · Tap to expand</div>
+      </div>
+      <div class="sum-bar-right">
+        <div class="sum-fig">
+          <div class="val" id="sh_remaining">P 1,500</div>
+          <div class="lbl">Remaining</div>
+        </div>
+        <div class="sum-fig">
+          <div class="val" id="sh_used">P 0</div>
+          <div class="lbl">Used</div>
+        </div>
+      </div>
+    </div>
+    <div class="sum-expanded" id="sumExpanded">
+      <div style="display:flex;justify-content:space-between;font-size:11px;color:#6b7c71;margin-bottom:4px">
+        <span>Budget: <strong id="sh_budget_lbl">P 1,500</strong></span>
+        <span id="sh_pct">0%</span>
+      </div>
+      <div class="budget-track"><div class="budget-fill" id="sh_fill" style="width:0%"></div></div>
+      <div class="sum-item-rows" id="sumItemRows"><div class="sum-empty-msg">No items yet — browse below and add to your sum!</div></div>
+      <div class="sum-actions" style="margin-top:10px">
+        <button class="sbtn sbtn-ghost" onclick="resetSum()">↺ Reset</button>
+        <button class="sbtn sbtn-fill" onclick="openNewSumPanel()">＋ New Sum</button>
+        <button class="sbtn sbtn-wa" onclick="shareCurrentSum()">📲 Share</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- NOTE BODY -->
+  <div id="noteBody">
+    <!-- ITEMS VIEW -->
+    <div class="view active" id="view-items">
+      <div class="pill-row" id="catPills"></div>
+      <div id="itemsBody"></div>
+    </div>
+
+    <!-- PROMOS VIEW -->
+    <div class="view" id="view-promos">
+      <div class="section-lbl">🔥 Live Deals & Promotions</div>
+      <div id="promosBody"></div>
+    </div>
+
+    <!-- NOTICES VIEW -->
+    <div class="view" id="view-notices">
+      <div class="section-lbl">📋 Notice Board</div>
+      <div id="noticesBody"></div>
+    </div>
+
+    <!-- PROFILE VIEW -->
+    <div class="view" id="view-profile">
+      <div id="profileBody"></div>
+    </div>
+  </div>
+
+  <!-- BOTTOM NAV -->
+  <div id="bottomNav">
+    <button class="nb on" id="nb-items" onclick="setView('items',this)">
+      <div class="ni">🥩</div><div class="nl">Items</div>
+    </button>
+    <button class="nb" id="nb-promos" onclick="setView('promos',this)">
+      <div class="ni">🔥</div><div class="nl">Promos</div>
+    </button>
+    <button class="nb" id="nb-notices" onclick="setView('notices',this)">
+      <div class="ni">📋</div><div class="nl">Notices</div>
+    </button>
+    <button class="nb" id="nb-profile" onclick="setView('profile',this)">
+      <div class="ni">👤</div><div class="nl">Profile</div>
+    </button>
+  </div>
+</div>
+
+<!-- ══ OVERLAY ══ -->
+<div class="overlay" id="overlay" onclick="closeAllPanels()"></div>
+
+<!-- ══ PROFILE SWITCHER PANEL ══ -->
+<div class="slide-panel" id="profileSwitcherPanel">
+  <div class="panel-handle"></div>
+  <div class="panel-title">Switch Profile</div>
+  <div id="psList"></div>
+</div>
+
+<!-- ══ ITEM DETAIL PANEL ══ -->
+<div class="slide-panel" id="itemDetailPanel">
+  <div class="panel-handle"></div>
+  <div id="itemDetailContent"></div>
+</div>
+
+<!-- ══ CREATE ITEM PANEL ══ -->
+<div class="slide-panel" id="createItemPanel">
+  <div class="panel-handle"></div>
+  <div class="panel-title">➕ Create Item</div>
+  <div class="img-upload-area" id="imgUploadArea" onclick="document.getElementById('picUploadInput').click()">
+    <input type="file" id="picUploadInput" accept="image/*" style="display:none" onchange="previewUploadedPic(event)">
+    <div id="imgUploadPreview" style="font-size:40px">📷</div>
+    <p>Tap to add photo</p>
+  </div>
+  <div class="field"><label>Item Name</label><input type="text" id="ci_name" placeholder="e.g. Beef Rump Steak"></div>
+  <div class="field"><label>Category</label>
+    <select id="ci_cat">
+      <option>Beef</option><option>Goat</option><option>Chicken</option><option>Game</option><option>Pork</option><option>Sheep/Lamb</option><option>Groceries</option><option>Services</option>
+    </select>
+  </div>
+  <div class="field"><label>Price (P)</label><input type="number" id="ci_price" placeholder="0.00" step="0.01"></div>
+  <div class="field"><label>Unit</label><input type="text" id="ci_unit" placeholder="e.g. per kg, per piece"></div>
+  <div class="field"><label>Vendor / Source</label><input type="text" id="ci_vendor" placeholder="e.g. 86th Ave Butchery"></div>
+  <div class="field"><label>Cut Type</label>
+    <select id="ci_cut"><option>Rump Steak</option><option>Fillet</option><option>Biltong</option><option>Mince</option><option>Bones</option><option>Oxtail</option><option>Loin</option><option>Ribs</option><option>Other</option></select>
+  </div>
+  <div class="field"><label>Distribution Mode</label>
+    <select id="ci_dist"><option>None</option><option>Divide Equally</option><option>Share Groups</option></select>
+  </div>
+  <div class="field"><label>Description</label><textarea id="ci_desc" rows="2" placeholder="Short description..."></textarea></div>
+  <div style="display:flex;align-items:center;gap:8px;margin-bottom:14px">
+    <input type="checkbox" id="ci_publish" style="width:auto;margin:0">
+    <label for="ci_publish" style="font-size:12px;color:#6b7c71">Publish anonymously to community</label>
+  </div>
+  <div style="display:flex;gap:8px">
+    <button class="save-btn" style="background:#f0f0f0;color:#555;flex:1" onclick="closeAllPanels()">Cancel</button>
+    <button class="save-btn" style="flex:2" onclick="saveNewItem()">Save Item</button>
+  </div>
+</div>
+
+<!-- ══ NEW SUM PANEL ══ -->
+<div class="slide-panel" id="newSumPanel">
+  <div class="panel-handle"></div>
+  <div class="panel-title">📊 Sums</div>
+  <div class="tab-row">
+    <div class="tab-item on" onclick="switchSumPanelTab('create',this)">New Sum</div>
+    <div class="tab-item" onclick="switchSumPanelTab('saved',this)">My Saved Sums</div>
+  </div>
+  <div id="sumPanelCreate">
+    <div class="field"><label>Sum Name</label><input type="text" id="ns_name" placeholder="e.g. Family Monthly Budget"></div>
+    <div class="field"><label>Budget (P)</label><input type="number" id="ns_budget" placeholder="0.00"></div>
+    <div class="field"><label>Schedule</label>
+      <select id="ns_sched"><option>Daily</option><option>Scheduled Day</option><option selected>Weekly</option><option>Monthly</option></select>
+    </div>
+    <button class="save-btn" onclick="createSum()">Create Sum</button>
+  </div>
+  <div id="sumPanelSaved" style="display:none"></div>
+</div>
+
+<!-- ══ TOAST ══ -->
+<div class="toast" id="toast"></div>
+
+<!-- ══ HIDDEN INPUTS ══ -->
+<input type="file" id="profilePicInput" accept="image/*" style="display:none" onchange="handleProfilePicChange(event)">
+
+<script>
+'use strict';
+/* ═══════════════════════════════════════════
+   NAMATOSE — Bothoflow™ Logic Engine v2
+   © 2025 Paphani Masalila
+═══════════════════════════════════════════ */
+
+// ── MASTER DATA (from Excel) ──────────────────────
+const MASTER = {
+  animalTypes:['Cow','Goat','Sheep','Pig','Chicken','Game'],
+  cowBreeds:['Cow - Afrikaner','Cow - Bonsmara','Cow - Boran','Cow - Brahman','Cow - Drakensberger','Cow - Hereford','Cow - Limousin','Cow - Nguni','Cow - Simbra','Cow - Simmentaler','Cow - Tswana','Cow - Tuli'],
+  goatBreeds:['Goat - Boer','Goat - Kalahari Red','Goat - Savanna','Goat - Tswana','Goat - Indigenous Veld','Goat - Angora','Goat - Saanen'],
+  gameTypes:['Game - Impala','Game - Buffalo','Game - Kudu','Game - Zebra','Game - Blesbok','Game - Eland','Game - Gemsbok','Game - Springbok','Game - Warthog','Game - Wildebeest','Game - Ostrich','Game - Guinea Fowl'],
+  distModes:['Divide Equally','Share Groups'],
+  payStatus:['Pending','Paid'],
+  mobileMoney:['BTC Smega','Mascom Myzaka','Orange Money'],
+  networks:['BTC Mobile','Mascom','Orange'],
+  contributionRate:['Weekly','Bi-Weekly','Monthly'],
+  groupRoles:['Member','Group Head A','Group Head B'],
+  businessTypes:['Abattoir','Butchery','Catering','Hospitality','Packaging','Refrigeration','Transport'],
+  beefCuts:['Biltong','Bones','Brisket','Chuck','Fillet','Flank','Head','Heart','Kidneys','Liver','Loin','Mince','Oxtail','Plate','Rib','Round','Rump Steak','Shank','Short Ribs','Stew','T-Bone'],
+  chickenCuts:['Full Chicken','Half Chicken','Quarter Chicken','Biltong','Breast','Drumsticks','Feet','Gizzards','Liver','Necks','Thighs','Wings'],
+  goatCuts:['Biltong','Bones','Breast','Flank','Foreshank','Ground Mince','Head','Heart','Hindshank','Kidneys','Leg','Leg Steaks','Leg Roast','Liver','Loin','Loin Chops','Neck','Rack (Ribs)','Shoulder','Sirloin Steaks','Stew','Tenderloin','Tongue','Tripe'],
+  buffaloCuts:['Biltong','Stewing Cuts','Goulash','Mince'],
+  kuduCuts:['Biltong','Saddle','Fillet','Haunch/Leg','Shoulder','Neck','Steaks','Roasts','Stew'],
+  zebraCuts:['Biltong','Leg','Loin','Shoulder','Steaks','Roasts','Stew'],
+  impalaCuts:['Biltong','Saddle','Fillet','Leg','Shoulder','Steaks','Roasts','Stew'],
+  cities:['Gaborone','Francistown','Selebi-Phikwe','Lobatse','Jwaneng','Orapa','Maun','Molepolole','Serowe','Kanye','Mahalapye','Palapye','Mogoditshane','Tlokweng','Mochudi','Ramotswa','Ghanzi','Kasane','Tshabong','Letlhakane','Moshupa','Thamaga','Bobonong','Tutume','Gabane','Tonota','Gumare'],
+  hoods:['Acacia Park','Block 3','Block 5','Block 6','Block 7','Block 8','Block 9','Block 10','Bontleng','Botswelelo','CBD','Boitshoko','Ext. 8','Ext. 10','Ext. 11','Ext. 12','Ext. 14','Ext. 15','Ext. 16','Ext. 17','Ext. 18','Ext. 19','Ext. 20','Ext. 21','Game City','Ledumang','Broadhurst','Fairgrounds','Molapo','Old Naledi','Phase 1','Phase 2','Phase 3','Phase 4','Phakalane','Riverwalk'],
+};
+
+// Share template logic (from Excel tab 06_SHARE_TEMPLATE)
+function calcShares(carcassKg, pricePerKg) {
+  const rawCost = carcassKg * pricePerKg;
+  const markupCost = rawCost * 1.075;
+  const largeSlots = 10; // fixed
+  const medSlots = 15;   // fixed
+  const kgUsedByLargeMed = largeSlots * 10 + medSlots * 5;
+  const kgRemaining = Math.max(0, carcassKg - kgUsedByLargeMed);
+  const smallSlots = kgRemaining > 0 ? Math.floor(kgRemaining / 2.5) : 0;
+  const totalSlots = largeSlots + medSlots + smallSlots;
+  return {
+    rawCost, markupCost,
+    largeSlots, medSlots, smallSlots, totalSlots,
+    largePx: markupCost / totalSlots * 4,
+    medPx:   markupCost / totalSlots * 2,
+    smallPx: markupCost / totalSlots,
+    kgLeft:  kgRemaining - (smallSlots * 2.5)
+  };
+}
+
+// Real beast data from Excel
+const REAL_BEASTS = [
+  {id:'Beast01',type:'Cow',breed:'Cow - Nguni',weight:250,priceKg:60,distMode:'Divide Equally',sharePeople:9,vendor:'86th Ave Butchery',desc:'Prime Nguni beef. Communal divide for 9 households.',city:'Gaborone'},
+  {id:'PiggyOink43',type:'Pig',breed:'Pig - Landrace',weight:237,priceKg:57,distMode:'-',sharePeople:30,vendor:'Tlokweng Farms',desc:'Large landrace pig, excellent for braai.',city:'Tlokweng'},
+  {id:'giffy45',type:'Game',breed:'Game - Impala',weight:190.5,priceKg:57,distMode:'-',sharePeople:13,vendor:'Kalahari Wild',desc:'Traditional game meat. Free range Impala.',city:'Maun'},
+];
+
+// ── APP STATE ──────────────────────────────────────
+let APP = {
+  currentProfile: 'man',
+  sum: {name:'Weekly Household',budget:1500,schedule:'Weekly',items:[]},
+  user: {
+    firstName:'Paphani',lastName:'Masalila',
+    whatsapp:'+267 71 234 567',email:'paphani@namatose.bw',
+    city:'Gaborone',area:'Block 7',
+    network:'Mascom',myzaka:'+267 71 234 567',btcSmega:'',orangeMoney:'',
+    profilePic:null
+  },
+  customItems: [],
+  currentView: 'items',
+  activeCat: 'All',
+};
+
+// Load persisted data
+function loadState() {
+  try {
+    const s = localStorage.getItem('namatose_v2');
+    if (s) {
+      const p = JSON.parse(s);
+      if (p.user) APP.user = {...APP.user,...p.user};
+      if (p.sum) APP.sum = p.sum;
+      if (p.customItems) APP.customItems = p.customItems;
+      if (p.currentProfile) APP.currentProfile = p.currentProfile;
+    }
+  } catch(e){}
+}
+function saveState() {
+  try {
+    localStorage.setItem('namatose_v2', JSON.stringify({
+      user: APP.user, sum: APP.sum,
+      customItems: APP.customItems, currentProfile: APP.currentProfile
+    }));
+  } catch(e){}
+}
+
+// ── PROFILES ──────────────────────────────────────
+const PROFILES = {
+  browser:{id:'browser',name:'Browser User',emoji:'🌐',badge:'Free',badgeClass:'badge-user',
+    perms:[
+      {ok:true,text:'View all items & prices'},
+      {ok:true,text:'Create Notes & Sums'},
+      {ok:true,text:'Set budgets & add items'},
+      {ok:true,text:'Save data offline'},
+      {ok:true,text:'Share via WhatsApp'},
+      {ok:false,text:'Publish items publicly'},
+      {ok:false,text:'Access vendor dashboard'},
+      {ok:false,text:'Manage Motshelo groups'},
+    ]},
+  man:{id:'man',name:'Paphani Masalila',emoji:'👨🏾',badge:'User',badgeClass:'badge-user',
+    perms:[
+      {ok:true,text:'All Browser permissions'},
+      {ok:true,text:'Save reusable Sums'},
+      {ok:true,text:'Create & publish custom items'},
+      {ok:true,text:'Publish price anonymously'},
+      {ok:true,text:'Join & vote in Motshelo groups'},
+      {ok:true,text:'View micro group analytics'},
+    ]},
+  woman:{id:'woman',name:'Kefilwe Sebele',emoji:'👩🏾',badge:'User',badgeClass:'badge-user',
+    perms:[
+      {ok:true,text:'All Standard User permissions'},
+      {ok:true,text:'Create household budgets'},
+      {ok:true,text:'Manage family Sums (Diet, Kids, Work)'},
+      {ok:true,text:'Join & vote in Motshelo groups'},
+    ]},
+  motshelo_mgr:{id:'motshelo_mgr',name:'Paphani Masalila',emoji:'🏦',badge:'Manager',badgeClass:'badge-manager',
+    perms:[
+      {ok:true,text:'All Standard User permissions'},
+      {ok:true,text:'Create & manage Motshelo groups'},
+      {ok:true,text:'Set weekly/monthly contributions'},
+      {ok:true,text:'Initiate votes & slaughter events'},
+      {ok:true,text:'Lock/unlock group & see fund total'},
+      {ok:true,text:'Moderate disputes'},
+      {ok:false,text:'Override 4-person confirmation rule'},
+    ]},
+  butcher:{id:'butcher',name:'86th Ave Butchery',emoji:'🔪',badge:'Vendor',badgeClass:'badge-vendor',
+    perms:[
+      {ok:true,text:'Create vendor profile'},
+      {ok:true,text:'List items with photo/price/tags'},
+      {ok:true,text:'Create notices & promotions'},
+      {ok:true,text:'Add WhatsApp & Facebook links'},
+      {ok:true,text:'View demand heatmap (anonymised)'},
+      {ok:true,text:'Access KPI dashboard (200 metrics)'},
+      {ok:false,text:'View individual user identity'},
+    ]},
+  refrigeration:{id:'refrigeration',name:'CoolChain Services',emoji:'❄️',badge:'Supplier',badgeClass:'badge-vendor',
+    perms:[
+      {ok:true,text:'List services & availability'},
+      {ok:true,text:'Set schedule & capacity'},
+      {ok:true,text:'View vendor demand forecast'},
+    ]},
+  grocery:{id:'grocery',name:'Fresh Picks Market',emoji:'🥦',badge:'Vendor',badgeClass:'badge-vendor',
+    perms:[
+      {ok:true,text:'List grocery items with pricing'},
+      {ok:true,text:'Create notices & weekly specials'},
+      {ok:true,text:'View KPI analytics dashboard'},
+    ]},
+  admin:{id:'admin',name:'Developer Admin',emoji:'⚙️',badge:'Admin',badgeClass:'badge-admin',
+    perms:[
+      {ok:true,text:'Full read access — all data'},
+      {ok:true,text:'System configuration'},
+      {ok:true,text:'KPI oversight & revenue reporting'},
+      {ok:true,text:'Role assignment & abuse review'},
+      {ok:false,text:'Alter core Bothoflow™ UI architecture'},
+    ]},
+};
+
+// ── VENDOR DATA ──────────────────────────────────
+const VENDORS = [
+  {id:1,name:'86th Ave Butchery',type:'Butchery',city:'Gaborone',area:'Block 7',wa:'+26771111001',fb:'86thAveButchery',emoji:'🔪'},
+  {id:2,name:'Meat World Gaborone',type:'Butchery',city:'Gaborone',area:'Broadhurst',wa:'+26771111002',fb:'MeatWorldBW',emoji:'🥩'},
+  {id:3,name:'Kalahari Wild',type:'Butchery',city:'Maun',area:'CBD',wa:'+26772111003',fb:'KalahariWildBW',emoji:'🦌'},
+  {id:4,name:'Borakanelo Farms',type:'Abattoir',city:'Molepolole',area:'Ext. 2',wa:'+26773111004',fb:'BorakaneloFarms',emoji:'🐐'},
+  {id:5,name:'Northern Game Co.',type:'Abattoir',city:'Francistown',area:'Phase 2',wa:'+26774111005',fb:'NorthernGameBW',emoji:'🐃'},
+  {id:6,name:'Choppies Gaborone',type:'Butchery',city:'Gaborone',area:'CBD',wa:'+26775111006',fb:'Choppies',emoji:'🛒'},
+  {id:7,name:'CoolChain Services',type:'Refrigeration',city:'Gaborone',area:'Fairgrounds',wa:'+26776111007',fb:'CoolChainBW',emoji:'❄️'},
+  {id:8,name:'Fresh Picks Market',type:'Butchery',city:'Gaborone',area:'Game City',wa:'+26777111008',fb:'FreshPicksBW',emoji:'🥦'},
+  {id:9,name:'Spar Tlokweng',type:'Butchery',city:'Tlokweng',area:'Tlokweng',wa:'+26778111009',fb:'SparBotswana',emoji:'🛒'},
+  {id:10,name:'Ditiro Transport BW',type:'Transport',city:'Gaborone',area:'Broadhurst',wa:'+26779111010',fb:'DitiroTransport',emoji:'🚛'},
+  {id:11,name:'Tlhaloganyo Farms',type:'Abattoir',city:'Kanye',area:'Ext. 10',wa:'+26771222011',fb:'Tlhaloganyo',emoji:'🌾'},
+  {id:12,name:'Rainbow Farms BW',type:'Butchery',city:'Gaborone',area:'Phakalane',wa:'+26771222012',fb:'RainbowFarmsBW',emoji:'🐔'},
+];
+
+// ── ITEMS DATA ────────────────────────────────────
+const BASE_ITEMS = [
+  // BEEF — from master data cuts
+  {id:101,cat:'Beef',name:'Rump Steak',price:89,unit:'per kg',vendor:'86th Ave Butchery',emoji:'🥩',cut:'Rump Steak',desc:'Premium rump steak. Grain fed, perfect for braai or pan fry.',shareType:'divide',slotsFilled:0},
+  {id:102,cat:'Beef',name:'Beef Fillet',price:125,unit:'per kg',vendor:'86th Ave Butchery',emoji:'🥩',cut:'Fillet',desc:'Prime beef fillet. Tender and flavourful.',shareType:'none'},
+  {id:103,cat:'Beef',name:'Beef Mince (Fine)',price:55,unit:'per kg',vendor:'Meat World Gaborone',emoji:'🥩',cut:'Mince',desc:'80% lean fine ground beef mince.',shareType:'none'},
+  {id:104,cat:'Beef',name:'Oxtail',price:68,unit:'per kg',vendor:'Spar Tlokweng',emoji:'🍖',cut:'Oxtail',shareType:'none'},
+  {id:105,cat:'Beef',name:'Beef Biltong',price:180,unit:'per kg',vendor:'86th Ave Butchery',emoji:'🥩',cut:'Biltong',shareType:'none'},
+  {id:106,cat:'Beef',name:'Short Ribs',price:72,unit:'per kg',vendor:'Meat World Gaborone',emoji:'🍖',cut:'Short Ribs',shareType:'none'},
+  {id:107,cat:'Beef',name:'Cow (Nguni) — Beast01',price:60,unit:'per kg (250kg)',vendor:'86th Ave Butchery',emoji:'🐄',cut:'Full Beast',isBeast:true,beastId:'Beast01',shareType:'share',slots:55,slotsFilled:7,desc:'Beast01 | Cow - Nguni | 250kg | 7.5% markup applied. Choose your share size below.'},
+  // GOAT
+  {id:201,cat:'Goat',name:'Goat Leg Quarter',price:75,unit:'per kg',vendor:'Borakanelo Farms',emoji:'🐐',cut:'Leg',desc:'Free range Tswana goat. Traditional braai cut.',shareType:'divide'},
+  {id:202,cat:'Goat',name:'Goat Ribs (Rack)',price:60,unit:'per kg',vendor:'Borakanelo Farms',emoji:'🐐',cut:'Rack (Ribs)',shareType:'none'},
+  {id:203,cat:'Goat',name:'Goat Loin Chops',price:85,unit:'per kg',vendor:'Borakanelo Farms',emoji:'🐐',cut:'Loin Chops',shareType:'none'},
+  {id:204,cat:'Goat',name:'Goat Biltong',price:160,unit:'per kg',vendor:'Tlhaloganyo Farms',emoji:'🐐',cut:'Biltong',shareType:'none'},
+  {id:205,cat:'Goat',name:'Full Goat — Kalahari Red',price:65,unit:'per kg (avg 28kg)',vendor:'Borakanelo Farms',emoji:'🐐',cut:'Full Beast',isBeast:true,shareType:'share',slots:15,slotsFilled:9},
+  // CHICKEN
+  {id:301,cat:'Chicken',name:'Full Chicken',price:58,unit:'per bird (~1.8kg)',vendor:'Rainbow Farms BW',emoji:'🍗',cut:'Full Chicken',desc:'Frozen whole chicken, 1.8kg average.',shareType:'none'},
+  {id:302,cat:'Chicken',name:'Chicken Braai Pieces',price:45,unit:'per kg',vendor:'Fresh Picks Market',emoji:'🍗',cut:'Drumsticks',shareType:'none'},
+  {id:303,cat:'Chicken',name:'Chicken Liver',price:22,unit:'per kg',vendor:'Meat World Gaborone',emoji:'🍗',cut:'Liver',shareType:'none'},
+  {id:304,cat:'Chicken',name:'Chicken Feet',price:18,unit:'per kg',vendor:'Choppies Gaborone',emoji:'🍗',cut:'Feet',shareType:'none'},
+  {id:305,cat:'Chicken',name:'Chicken Necks',price:20,unit:'per kg',vendor:'Rainbow Farms BW',emoji:'🍗',cut:'Necks',shareType:'none'},
+  // GAME
+  {id:401,cat:'Game',name:'Kudu Steak (Saddle)',price:145,unit:'per kg',vendor:'Kalahari Wild',emoji:'🦌',cut:'Saddle',desc:'Prime kudu saddle. Lean and rich flavoured. Kalahari raised.',shareType:'divide'},
+  {id:402,cat:'Game',name:'Impala — giffy45',price:57,unit:'per kg (190.5kg)',vendor:'Kalahari Wild',emoji:'🦌',cut:'Full Beast',isBeast:true,beastId:'giffy45',shareType:'share',slots:31,slotsFilled:18,desc:'giffy45 | Game - Impala | 190.5kg | Traditional free range game.'},
+  {id:403,cat:'Game',name:'Buffalo Share (Med)',price:90,unit:'5kg share',vendor:'Northern Game Co.',emoji:'🐃',cut:'Stewing Cuts',shareType:'share',slots:20,slotsFilled:14},
+  {id:404,cat:'Game',name:'Zebra Braai Pack',price:165,unit:'per kg',vendor:'Kalahari Wild',emoji:'🦓',cut:'Loin',shareType:'none'},
+  {id:405,cat:'Game',name:'Kudu Biltong',price:220,unit:'per kg',vendor:'Kalahari Wild',emoji:'🦌',cut:'Biltong',shareType:'none'},
+  {id:406,cat:'Game',name:'Warthog Ribs',price:130,unit:'per kg',vendor:'Northern Game Co.',emoji:'🐗',cut:'Loin',shareType:'none'},
+  // PORK
+  {id:501,cat:'Pork',name:'Pork Ribs',price:65,unit:'per kg',vendor:'Meat World Gaborone',emoji:'🥓',cut:'Ribs',shareType:'none'},
+  {id:502,cat:'Pork',name:'PiggyOink43 — Pig',price:57,unit:'per kg (237kg)',vendor:'Tlokweng Farms',emoji:'🐷',cut:'Full Beast',isBeast:true,beastId:'PiggyOink43',shareType:'share',slots:49,slotsFilled:30},
+  // SHEEP
+  {id:601,cat:'Sheep',name:'Lamb Chops',price:95,unit:'per kg',vendor:'86th Ave Butchery',emoji:'🍖',cut:'Loin Chops',shareType:'none'},
+  {id:602,cat:'Sheep',name:'Lamb Leg Roast',price:88,unit:'per kg',vendor:'Borakanelo Farms',emoji:'🍖',cut:'Leg Roast',shareType:'none'},
+  // GROCERIES
+  {id:701,cat:'Groceries',name:'Mealie Meal 10kg',price:55,unit:'per bag',vendor:'Choppies Gaborone',emoji:'🌽',shareType:'none'},
+  {id:702,cat:'Groceries',name:'Fresh Tomatoes',price:12,unit:'per kg',vendor:'Local Farmer — Oodi',emoji:'🍅',desc:'Direct from Oodi community farm. Chemical-free.',shareType:'none'},
+  {id:703,cat:'Groceries',name:'Full Cream Milk 2L',price:22,unit:'per carton',vendor:'Spar Tlokweng',emoji:'🥛',shareType:'none'},
+  {id:704,cat:'Groceries',name:'Sunflower Oil 2L',price:34,unit:'per bottle',vendor:'Choppies Gaborone',emoji:'🫙',shareType:'none'},
+  {id:705,cat:'Groceries',name:'Bread Loaf',price:9,unit:'per loaf',vendor:'Fresh Picks Market',emoji:'🍞',shareType:'none'},
+  {id:706,cat:'Groceries',name:'Fresh Spinach',price:7,unit:'per bundle',vendor:'Local Farmer — Oodi',emoji:'🥬',desc:'Oodi community farm. Fresh daily.',shareType:'none'},
+  {id:707,cat:'Groceries',name:'Rice 5kg',price:42,unit:'per bag',vendor:'Choppies Gaborone',emoji:'🍚',shareType:'none'},
+  // SERVICES
+  {id:801,cat:'Services',name:'Cold Storage (Monthly)',price:350,unit:'per month',vendor:'CoolChain Services',emoji:'❄️',desc:'Group cold storage rental. Split cost with Motshelo group.',shareType:'divide'},
+  {id:802,cat:'Services',name:'Transport — Slaughter Day',price:280,unit:'per trip',vendor:'Ditiro Transport BW',emoji:'🚛',desc:'Animal transport to abattoir and return delivery.',shareType:'divide'},
+];
+
+// ── SAVED SUMS ────────────────────────────────────
+const SAVED_SUMS = [
+  {name:'Weekly Household',budget:1500,schedule:'Weekly',items:[{id:103,qty:2},{id:701,qty:1},{id:705,qty:3},{id:703,qty:2},{id:301,qty:2}]},
+  {name:'Monthly Beef Share',budget:3200,schedule:'Monthly',items:[{id:107,qty:1},{id:102,qty:2},{id:104,qty:1}]},
+  {name:'Diet Plan — Jan',budget:2000,schedule:'Monthly',items:[{id:301,qty:4},{id:706,qty:4},{id:702,qty:3}]},
+  {name:'Braai Weekend',budget:800,schedule:'Scheduled Day',items:[{id:101,qty:2},{id:202,qty:2},{id:302,qty:2}]},
+  {name:"Kids' Monthly",budget:1200,schedule:'Monthly',items:[{id:301,qty:4},{id:302,qty:3},{id:701,qty:1}]},
+  {name:'Game Night Special',budget:2500,schedule:'Scheduled Day',items:[{id:401,qty:1},{id:404,qty:1},{id:101,qty:2}]},
+  {name:'Motshelo Commitment',budget:400,schedule:'Monthly',items:[{id:205,qty:1},{id:801,qty:1}]},
+];
+
+// ── MOTSHELO DATA ─────────────────────────────────
+const MOTSHELO = {
+  group:{
+    name:'Tlhaloganyo Meat Club',state:'ACTIVE',manager:'Paphani Masalila',
+    contribution:{rate:'Weekly',amount:50},
+    groupHeadA:'Paphani Masalila',groupHeadB:'Kefilwe Sebele',
+  },
+  members:[
+    {name:'Paphani Masalila',role:'Group Head A',network:'Mascom',bankingNum:'+267 71 234 567',wa:'+267 71 234 567',city:'Gaborone',area:'Block 7',weeks:8,paid:true},
+    {name:'Kefilwe Sebele',role:'Group Head B',network:'BTC Mobile',bankingNum:'+267 72 345 678',wa:'+267 72 345 678',city:'Gaborone',area:'Block 7',weeks:8,paid:true},
+    {name:'Tebogo Nkosi',role:'Member',network:'Orange',bankingNum:'+267 73 456 789',wa:'+267 73 456 789',city:'Gaborone',area:'Ext. 15',weeks:7,paid:true},
+    {name:'Mpho Ditsebe',role:'Member',network:'Mascom',bankingNum:'+267 71 567 890',wa:'+267 71 567 890',city:'Gaborone',area:'Block 8',weeks:8,paid:true},
+    {name:'Naledi Tau',role:'Member',network:'BTC Mobile',bankingNum:'+267 72 678 901',wa:'+267 72 678 901',city:'Tlokweng',area:'Tlokweng',weeks:6,paid:false},
+    {name:'Odirile Seoke',role:'Member',network:'Mascom',bankingNum:'+267 71 789 012',wa:'+267 71 789 012',city:'Gaborone',area:'CBD',weeks:8,paid:true},
+    {name:'Kagiso Molefe',role:'Member',network:'Orange',bankingNum:'+267 73 890 123',wa:'+267 73 890 123',city:'Gaborone',area:'Phase 4',weeks:8,paid:true},
+    {name:'Boitumelo Kgosi',role:'Member',network:'Mascom',bankingNum:'+267 71 901 234',wa:'+267 71 901 234',city:'Gaborone',area:'Bontleng',weeks:7,paid:true},
+    {name:'Onkabetse Dikole',role:'Member',network:'BTC Mobile',bankingNum:'+267 72 012 345',wa:'+267 72 012 345',city:'Mogoditshane',area:'Ext. 18',weeks:8,paid:true},
+    {name:'Tshepiso Garebakwe',role:'Member',network:'Mascom',bankingNum:'+267 71 123 456',wa:'+267 71 123 456',city:'Gaborone',area:'Acacia Park',weeks:8,paid:true},
+    {name:'Lindiwe Batlhoki',role:'Member',network:'Orange',bankingNum:'+267 73 234 567',wa:'+267 73 234 567',city:'Gaborone',area:'Ext. 8',weeks:5,paid:false},
+    {name:'Reabetswe Moloi',role:'Member',network:'Mascom',bankingNum:'+267 71 345 678',wa:'+267 71 345 678',city:'Gaborone',area:'Block 9',weeks:8,paid:true},
+  ],
+  currentVote:{
+    type:'Animal Purchase',
+    animalId:'Beast01',
+    animalDesc:'Cow (Cow - Nguni) | 250kg | P 16,125 with 7.5% markup',
+    totalCost:16125,
+    shareType:'Share Groups',
+    deadline:'2025-09-20',
+    state:'OPEN',
+    votes:{yes:8,no:2,abstain:1,total:12}
+  },
+  borrowRequests:[
+    {member:'Naledi Tau',amount:250,reason:'School fees — uniform & stationery',repayDate:'2025-10-01',confirmations:2,state:'CONFIRMING'},
+    {member:'Lindiwe Batlhoki',amount:180,reason:'Medical appointment',repayDate:'2025-10-15',confirmations:0,state:'REQUESTED'},
+  ],
+  inventory:[
+    {beastId:'Beast01',type:'Cow',breed:'Cow - Nguni',weight:250,priceKg:60,totalPeople:55,registered:7,status:'OPEN'},
+    {beastId:'giffy45',type:'Game',breed:'Game - Impala',weight:190.5,priceKg:57,totalPeople:31,registered:18,status:'OPEN'},
+    {beastId:'PiggyOink43',type:'Pig',breed:'Pig - Landrace',weight:237,priceKg:57,totalPeople:49,registered:30,status:'OPEN'},
+  ],
+};
+
+// ── NOTICES ───────────────────────────────────────
+const NOTICES = [
+  {id:1,title:'🔥 Fresh Kudu Available — Limited!',body:'3 Kudu beasts just arrived. Large & medium share slots open. First come first served. 190kg each.',vendor:'Kalahari Wild',vendorId:3,price:'P 145/kg',emoji:'🦌',date:'Today',type:'stock'},
+  {id:2,title:'Saturday Goat Slaughter Day',body:'Borakanelo Farms hosting a community slaughter. Book individual slots or bring your Motshelo group.',vendor:'Borakanelo Farms',vendorId:4,price:'P 75/kg',emoji:'🐐',date:'2 days ago',type:'event'},
+  {id:3,title:'Cold Storage — 3 Slots Available',body:'CoolChain has community storage space for group buys. Monthly rate negotiable for Motshelo groups.',vendor:'CoolChain Services',vendorId:7,price:'P 350/mo',emoji:'❄️',date:'3 days ago',type:'service'},
+  {id:4,title:'Fresh Produce Direct from Oodi',body:'Tomatoes, spinach, pumpkins, onions. No chemicals. Support local community farmers!',vendor:'Local Farmer — Oodi',price:'From P 7',emoji:'🌱',date:'Today',type:'produce'},
+  {id:5,title:'Buffalo Group Buy — Register Now!',body:'Northern Game Co. opening registration for December buffalo. 20 shares at 5kg each. Total beast: P 8,400.',vendor:'Northern Game Co.',vendorId:5,price:'P 420 / 5kg share',emoji:'🐃',date:'Yesterday',type:'group'},
+  {id:6,title:'Pig (PiggyOink43) — 19 Slots Left',body:'Pig - Landrace, 237kg. Book your 5kg or 10kg share now. P 592.74 for a medium share.',vendor:'Tlokweng Farms',price:'From P 296.37/share',emoji:'🐷',date:'3 days ago',type:'stock'},
+];
+
+// ── PROMOS ────────────────────────────────────────
+const PROMOS = [
+  {id:1,title:'10% OFF Rump Steak',body:'Every Wednesday. Min 2kg purchase required. Show this promo code at 86th Ave checkout.',vendor:'86th Ave Butchery',expires:'2025-09-30',code:'NAMATOSE10',emoji:'🥩',discount:'10% OFF'},
+  {id:2,title:'Free Delivery on Group Orders',body:'Order above P 3,000 as a Motshelo group and get free delivery anywhere in Greater Gaborone.',vendor:'Ditiro Transport BW',expires:'2025-10-15',code:'GRPFREE',emoji:'🚛',discount:'FREE DELIVERY'},
+  {id:3,title:'P50 Rebate — First Group Purchase',body:'Any Motshelo group completing their first full animal purchase gets P 50 Namatose credit.',vendor:'Namatose Platform',expires:'2025-12-31',code:'MOTSHELO50',emoji:'🎉',discount:'P 50 CREDIT'},
+  {id:4,title:'Zero Fees Weekend — MyZaka',body:'Pay via Mascom MyZaka this weekend and get zero transaction fees on all Namatose purchases.',vendor:'Mascom × Namatose',expires:'2025-09-08',code:'MYZAKAZERO',emoji:'📱',discount:'ZERO FEES'},
+  {id:5,title:'Fresh Spinach — Buy 3 Get 1',body:'Purchase 3 bundles of Oodi farm spinach, get 1 free. Available Friday & Saturday only.',vendor:'Local Farmer — Oodi',expires:'2025-09-07',code:'SPINACH4',emoji:'🥬',discount:'BUY 3 GET 1'},
+];
+
+// ── KPI METRICS ───────────────────────────────────
+const KPIS = [
+  {val:'1,247',lbl:'Item Views Today',trend:'↑ 12%'},
+  {val:'89',lbl:'Items Added to Sums',trend:'↑ 5%'},
+  {val:'P 1,340',lbl:'Avg User Budget',trend:'↑ 2%'},
+  {val:'Friday',lbl:'Peak Purchase Day',trend:'↔'},
+  {val:'Gaborone',lbl:'Top Sales City',trend:'↑ 8%'},
+  {val:'Medium 5kg',lbl:'Most Popular Share',trend:'↑ 15%'},
+  {val:'23',lbl:'Abandoned Sums',trend:'↓ 3%'},
+  {val:'68%',lbl:'Repeat Customers',trend:'↑ 4%'},
+  {val:'P 200.00',lbl:'Platform Subscription',trend:'Fixed'},
+  {val:'P 12,450',lbl:'Monthly Profit Est.',trend:'↑ 9%'},
+  {val:'87/100',lbl:'Contribution Score',trend:'↑ 3'},
+  {val:'4.2/5',lbl:'Community Rating',trend:'↑ 0.3'},
+];
+
+// ── HELPERS ───────────────────────────────────────
+const P = n => `P ${Number(n).toLocaleString('en-ZA',{minimumFractionDigits:2,maximumFractionDigits:2})}`;
+const allItems = () => [...BASE_ITEMS, ...APP.customItems];
+const findItem = id => allItems().find(i=>i.id===id);
+const findVendor = name => VENDORS.find(v=>v.name===name);
+
+let toastTimer;
+function toast(msg,dur=2800){
+  const t=document.getElementById('toast');
+  t.textContent=msg;t.classList.add('show');
+  clearTimeout(toastTimer);
+  toastTimer=setTimeout(()=>t.classList.remove('show'),dur);
+}
+
+function openWA(num){if(num)window.open('https://wa.me/'+num.replace(/[\s+\-()]/g,''));}
+function openFB(pg){if(pg)window.open('https://facebook.com/'+pg);}
+
+// ── LOGIN ─────────────────────────────────────────
+function doLogin(){
+  const fn=document.getElementById('li_fname').value.trim();
+  const wa=document.getElementById('li_wa').value.trim();
+  if(fn){APP.user.firstName=fn;}
+  if(wa){APP.user.whatsapp=wa;}
+  saveState();
+  document.getElementById('loginScreen').classList.remove('active');
+  document.getElementById('appScreen').classList.add('active');
+  APP.currentProfile='man';
+  initApp();
+}
+
+function initApp(){
+  renderSumHeader();
+  renderItems();
+  renderCatPills();
+  setupScrollHeader();
+}
+
+// ── SCROLL HEADER LOGIC ───────────────────────────
+function setupScrollHeader(){
+  let last=0;
+  document.getElementById('noteBody').addEventListener('scroll',function(){
+    const top=document.getElementById('topHeader');
+    if(this.scrollTop>last&&this.scrollTop>50) top.classList.add('scrolled-away');
+    else top.classList.remove('scrolled-away');
+    last=this.scrollTop;
+  });
+}
+
+// ── SUM ENGINE ────────────────────────────────────
+function computeSum(){
+  let used=0;
+  APP.sum.items.forEach(si=>{
+    const it=findItem(si.id);
+    if(it) used+=it.price*si.qty;
+  });
+  return {used, remaining:APP.sum.budget-used};
+}
+
+function renderSumHeader(){
+  const {used,remaining}=computeSum();
+  const pct=Math.max(0,Math.min(100,Math.round(used/APP.sum.budget*100)));
+  document.getElementById('sh_name').textContent=APP.sum.name;
+  document.getElementById('sh_schedule').textContent=APP.sum.schedule+' · Tap to expand';
+  document.getElementById('sh_remaining').textContent=P(remaining);
+  document.getElementById('sh_used').textContent=P(used);
+  document.getElementById('sh_budget_lbl').textContent=P(APP.sum.budget);
+  document.getElementById('sh_pct').textContent=pct+'%';
+  const fill=document.getElementById('sh_fill');
+  fill.style.width=pct+'%';
+  fill.style.background=pct>90?'#b83030':pct>70?'#c8922a':'linear-gradient(90deg,#1a4228,#4a9463)';
+  // Rows
+  const el=document.getElementById('sumItemRows');
+  if(!APP.sum.items.length){el.innerHTML='<div class="sum-empty-msg">No items yet — browse below and add to your sum!</div>';return;}
+  el.innerHTML=APP.sum.items.map(si=>{
+    const it=findItem(si.id);if(!it)return'';
+    return`<div class="sir">
+      <span class="si-name">${it.emoji} ${it.name} ×${si.qty}</span>
+      <span style="display:flex;align-items:center;gap:6px">
+        <span class="si-price">${P(it.price*si.qty)}</span>
+        <button class="si-del" onclick="removeFromSum(${si.id})">×</button>
+      </span>
+    </div>`;
+  }).join('');
+}
+
+function toggleSumExpand(){
+  document.getElementById('sumExpanded').classList.toggle('open');
+}
+
+function addToSum(itemId){
+  const it=findItem(itemId);if(!it)return;
+  const ex=APP.sum.items.find(s=>s.id===itemId);
+  if(ex) ex.qty++;
+  else APP.sum.items.push({id:itemId,qty:1});
+  saveState();renderSumHeader();
+  toast(`${it.emoji} ${it.name} added to sum!`);
+}
+
+function removeFromSum(itemId){
+  APP.sum.items=APP.sum.items.filter(s=>s.id!==itemId);
+  saveState();renderSumHeader();
+}
+
+function resetSum(){APP.sum.items=[];saveState();renderSumHeader();toast('Sum reset!');}
+
+function shareCurrentSum(){
+  let msg=`*${APP.sum.name}* — Namatose Sum (${APP.sum.schedule})\n\n`;
+  APP.sum.items.forEach(si=>{
+    const it=findItem(si.id);
+    if(it) msg+=`• ${it.name} ×${si.qty} — ${P(it.price*si.qty)}\n`;
+  });
+  const {used,remaining}=computeSum();
+  msg+=`\n*Total Used: ${P(used)}*\n*Remaining Budget: ${P(remaining)}*\n\nShared via Namatose 🥩\nBothoflow™ Platform`;
+  openWA('?text='+encodeURIComponent(msg));
+}
+
+// ── CATEGORY PILLS ────────────────────────────────
+const CATS=['All','Beef','Goat','Chicken','Game','Pork','Sheep','Groceries','Services'];
+function renderCatPills(){
+  document.getElementById('catPills').innerHTML=
+    CATS.map(c=>`<span class="pill ${c===APP.activeCat?'on':''}" onclick="filterCat('${c}')">${c}</span>`).join('')+
+    `<span class="pill pill-add" onclick="openCreateItem()">＋ Create</span>`;
+}
+function filterCat(cat){APP.activeCat=cat;renderCatPills();renderItems();}
+
+// ── ITEMS RENDER ──────────────────────────────────
+const CAT_EMOJI={'Beef':'🥩','Goat':'🐐','Chicken':'🍗','Game':'🦌','Pork':'🐷','Sheep':'🍖','Groceries':'🛒','Services':'⚙️'};
+
+function renderItems(){
+  const items=allItems().filter(i=>APP.activeCat==='All'||i.cat===APP.activeCat);
+  const grouped={};
+  items.forEach(i=>{
+    if(!grouped[i.cat])grouped[i.cat]=[];
+    grouped[i.cat].push(i);
+  });
+  let html='';
+  Object.keys(grouped).forEach(cat=>{
+    const catItems=grouped[cat];
+    const open=APP.activeCat!=='All'||['Beef','Game'].includes(cat);
+    html+=`<div class="card">
+      <div class="card-hdr" onclick="toggleCard('cc_${cat}')">
+        <div class="card-hdr-l">
+          <span class="cat-emoji">${CAT_EMOJI[cat]||'📦'}</span>
+          <div><h3>${cat}</h3><div class="meta">${catItems.length} items</div></div>
+        </div>
+        <div class="card-hdr-r">
+          <span class="item-count-badge">${catItems.length}</span>
+          <span class="chev ${open?'down':''}" id="chev_cc_${cat}">▼</span>
+        </div>
+      </div>
+      <div class="card-body ${open?'open':''}" id="cc_${cat}">
+        <div class="items-grid">
+          ${catItems.map(renderItemCard).join('')}
+        </div>
+        ${renderVendorStrip(cat)}
+      </div>
+    </div>`;
+  });
+  // Beast Listing sub-section for beef/game
+  if(APP.activeCat==='All'||APP.activeCat==='Beef'||APP.activeCat==='Game'||APP.activeCat==='Pork'){
+    html+=renderBeastSection();
+  }
+  // Inventory tracking
+  if(APP.activeCat==='All'){
+    html+=renderInventorySection();
+  }
+  document.getElementById('itemsBody').innerHTML=html;
+}
+
+function renderItemCard(item){
+  const slotPct=item.slots?Math.round(((item.slotsFilled||0)/item.slots)*100):0;
+  return`<div class="ic" onclick="openItemDetail(${item.id})">
+    <div class="ic-img">${item.photo?`<img src="${item.photo}" alt="">`:`${item.emoji}`}</div>
+    <div class="ic-info">
+      <div class="ic-name">${item.name}</div>
+      <div class="ic-price">${P(item.price)}</div>
+      <div class="ic-unit">${item.unit}</div>
+      ${item.slots?`<div class="slot-bar"><div class="slot-fill" style="width:${slotPct}%"></div></div><div class="slot-txt">${item.slotsFilled||0}/${item.slots} slots</div>`:''}
+      <div class="ic-vendor">${item.vendor}</div>
+    </div>
+  </div>`;
+}
+
+function renderVendorStrip(cat){
+  const typeMap={Beef:'Butchery',Goat:'Abattoir',Chicken:'Butchery',Game:'Abattoir',Groceries:'Butchery',Services:'Refrigeration,Transport'};
+  const t=typeMap[cat]||'';
+  const vends=VENDORS.filter(v=>t.includes(v.type)).slice(0,3);
+  if(!vends.length)return'';
+  return`<div class="vendor-strip">
+    <div class="vs-label">Vendors for ${cat}</div>
+    ${vends.map(v=>`<div class="vr">
+      <div class="vi">${v.emoji}</div>
+      <div class="vn"><h4>${v.name}</h4><p>${v.city} · ${v.area}</p></div>
+      <div class="vbtns">
+        <button class="wa-btn" onclick="event.stopPropagation();openWA('${v.wa}')">💬</button>
+        <button class="fb-btn" onclick="event.stopPropagation();openFB('${v.fb}')">f</button>
+      </div>
+    </div>`).join('')}
+  </div>`;
+}
+
+function renderBeastSection(){
+  const beasts=REAL_BEASTS;
+  return`<div class="card">
+    <div class="card-hdr" onclick="toggleCard('beast_listings')">
+      <div class="card-hdr-l"><span class="cat-emoji">🐄</span><div><h3>Animal Listings & Pricing</h3><div class="meta">Real beast data · 7.5% markup applied</div></div></div>
+      <div class="card-hdr-r"><span class="chev" id="chev_beast_listings">▼</span></div>
+    </div>
+    <div class="card-body" id="beast_listings">
+      ${beasts.map(b=>{
+        const s=calcShares(b.weight,b.priceKg);
+        const slotPct=b.slotsFilled?Math.round((b.slotsFilled/s.totalSlots)*100):0;
+        return`<div class="beast-card">
+          <div class="beast-hdr">
+            <div class="bh-id">${b.id} · ${b.distMode}</div>
+            <div class="bh-title">${b.type} — ${b.breed}</div>
+            <div class="bh-sub">Supplier: ${b.vendor} · ${b.city}</div>
+          </div>
+          <div class="beast-stats">
+            <div class="bs-stat"><div class="bsv">${b.weight}kg</div><div class="bsl">Carcass</div></div>
+            <div class="bs-stat"><div class="bsv">${P(s.rawCost)}</div><div class="bsl">Raw Cost</div></div>
+            <div class="bs-stat"><div class="bsv">${P(s.markupCost)}</div><div class="bsl">+7.5% Markup</div></div>
+          </div>
+          <div class="share-rows">
+            ${b.distMode==='Divide Equally'?`
+            <div class="share-row">
+              <div class="sr-l"><div class="sr-name">÷ Divide Equally (${b.sharePeople} people)</div><div class="sr-slots">${(b.weight/b.sharePeople).toFixed(1)}kg each</div></div>
+              <div class="sr-price">${P(s.markupCost/b.sharePeople)}/share</div>
+            </div>`:`
+            <div class="share-row" onclick="this.classList.toggle('picked')">
+              <div class="sr-l"><div class="sr-name">🟢 Large Share (10kg)</div><div class="sr-slots">${s.largeSlots} slots available</div></div>
+              <div class="sr-price">${P(s.largePx)}</div>
+            </div>
+            <div class="share-row" onclick="this.classList.toggle('picked')">
+              <div class="sr-l"><div class="sr-name">🟡 Medium Share (5kg)</div><div class="sr-slots">${s.medSlots} slots</div></div>
+              <div class="sr-price">${P(s.medPx)}</div>
+            </div>
+            <div class="share-row" onclick="this.classList.toggle('picked')">
+              <div class="sr-l"><div class="sr-name">🔴 Small Share (2.5kg)</div><div class="sr-slots">${s.smallSlots} slots · ${s.kgLeft}kg leftover</div></div>
+              <div class="sr-price">${P(s.smallPx)}</div>
+            </div>`}
+          </div>
+          <div class="beast-footer">
+            <button class="beast-add-btn" onclick="addToSum(${BASE_ITEMS.find(i=>i.beastId===b.id)?.id||101})">＋ Add to Sum</button>
+            <button class="wa-btn" onclick="openWA(VENDORS.find(v=>v.name==='${b.vendor}')?.wa||'')">💬 Enquire</button>
+          </div>
+        </div>`;
+      }).join('')}
+    </div>
+  </div>`;
+}
+
+function renderInventorySection(){
+  return`<div class="card">
+    <div class="card-hdr" onclick="toggleCard('inv_section')">
+      <div class="card-hdr-l"><span class="cat-emoji">📋</span><div><h3>Inventory Tracking</h3><div class="meta">Live slot status board</div></div></div>
+      <div class="card-hdr-r"><span class="chev" id="chev_inv_section">▼</span></div>
+    </div>
+    <div class="card-body" id="inv_section">
+      ${MOTSHELO.inventory.map(inv=>{
+        const remaining=inv.totalPeople-inv.registered;
+        const isFull=remaining<=0;
+        return`<div class="inv-card">
+          <div class="inv-hdr">
+            <h4>${inv.beastId} — ${inv.type} (${inv.breed})</h4>
+            <span class="${isFull?'status-full':'status-open'}">${isFull?'FULL — READY TO BUTCHER':`OPEN — ${remaining} slots left`}</span>
+          </div>
+          <div class="inv-body">
+            <div class="inv-row"><span class="ir-l">Carcass Weight</span><span class="ir-v">${inv.weight}kg</span></div>
+            <div class="inv-row"><span class="ir-l">Price/kg</span><span class="ir-v">${P(inv.priceKg)}</span></div>
+            <div class="inv-row"><span class="ir-l">Raw Cost</span><span class="ir-v">${P(inv.weight*inv.priceKg)}</span></div>
+            <div class="inv-row"><span class="ir-l">With 7.5% Markup</span><span class="ir-v">${P(inv.weight*inv.priceKg*1.075)}</span></div>
+            <div class="inv-row"><span class="ir-l">Total Slots</span><span class="ir-v">${inv.totalPeople}</span></div>
+            <div class="inv-row"><span class="ir-l">Registered (PAID)</span><span class="ir-v">${inv.registered}</span></div>
+            <div class="inv-row"><span class="ir-l">Remaining Slots</span><span class="ir-v">${remaining}</span></div>
+            <div class="inv-row"><span class="ir-l">P100 Motshelo Fee</span><span class="ir-v">${isFull?'P 100.00 ✅ TRIGGERED':'Pending — not full yet'}</span></div>
+          </div>
+        </div>`;
+      }).join('')}
+    </div>
+  </div>`;
+}
+
+// ── ACCORDION ─────────────────────────────────────
+function toggleCard(id){
+  const b=document.getElementById(id);
+  const c=document.getElementById('chev_'+id);
+  if(b){b.classList.toggle('open');}
+  if(c){c.classList.toggle('down');}
+}
+function toggleSection(id){
+  const b=document.getElementById(id);
+  const c=document.getElementById('chev_s'+id);
+  if(b){b.classList.toggle('open');}
+  if(c){c.classList.toggle('down');}
+}
+
+// ── ITEM DETAIL ───────────────────────────────────
+function openItemDetail(id){
+  const item=findItem(id);if(!item)return;
+  const vendor=findVendor(item.vendor);
+  const markup=(item.price*1.075);
+  let shareHtml='';
+  if(item.shareType==='share'){
+    const s=item.beastId?calcShares(REAL_BEASTS.find(b=>b.id===item.beastId)?.weight||100, item.price):null;
+    shareHtml=`<div class="share-opts-section">
+      <h4>Share Options</h4>
+      ${s?`
+      <div class="share-opt" onclick="this.classList.toggle('sel')">
+        <div><div class="so-name">🟢 Large Share (10kg)</div><div class="so-slots">${s.largeSlots} slots</div></div>
+        <div class="so-price">${P(s.largePx)}</div>
+      </div>
+      <div class="share-opt" onclick="this.classList.toggle('sel')">
+        <div><div class="so-name">🟡 Medium Share (5kg)</div><div class="so-slots">${s.medSlots} slots</div></div>
+        <div class="so-price">${P(s.medPx)}</div>
+      </div>
+      <div class="share-opt" onclick="this.classList.toggle('sel')">
+        <div><div class="so-name">🔴 Small Share (2.5kg)</div><div class="so-slots">${s.smallSlots} slots</div></div>
+        <div class="so-price">${P(s.smallPx)}</div>
+      </div>`:
+      `<div class="share-opt"><div><div class="so-name">Community Share</div><div class="so-slots">${item.slotsFilled||0}/${item.slots||'?'} slots filled</div></div><div class="so-price">${P(item.price)}</div></div>`
+      }
+    </div>`;
+  }
+  document.getElementById('itemDetailContent').innerHTML=`
+    <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:14px">
+      <div><div style="font-size:18px;font-weight:900">${item.name}</div>
+      <div style="font-size:12px;color:#6b7c71;margin-top:2px">${item.cat} ${item.cut?'· '+item.cut:''}</div></div>
+      <button onclick="closeAllPanels()" style="background:var(--fog);border:none;border-radius:50%;width:32px;height:32px;font-size:18px;cursor:pointer">×</button>
+    </div>
+    <div class="item-detail-img">${item.photo?`<img src="${item.photo}" alt="">`:`${item.emoji}`}</div>
+    ${item.desc?`<p style="font-size:13px;color:#6b7c71;margin-bottom:12px;line-height:1.6">${item.desc}</p>`:''}
+    <div class="det-row"><span class="dl">Price</span><span class="dv" style="color:var(--leaf);font-family:'Space Mono',monospace">${P(item.price)} ${item.unit}</span></div>
+    <div class="det-row"><span class="dl">With 7.5% markup</span><span class="dv" style="font-family:'Space Mono',monospace">${P(markup)}</span></div>
+    <div class="det-row"><span class="dl">Vendor</span><span class="dv">${item.vendor}</span></div>
+    <div class="det-row"><span class="dl">Category</span><span class="dv">${item.cat}</span></div>
+    ${item.slots?`<div class="det-row"><span class="dl">Slots Filled</span><span class="dv">${item.slotsFilled||0}/${item.slots}</span></div>`:''}
+    ${shareHtml}
+    <div class="payment-tags">
+      <span class="ptag pt-cash">💵 Cash</span>
+      <span class="ptag pt-btc" onclick="vendor&&openWA(vendor.wa)">🔷 BTC Smega</span>
+      <span class="ptag pt-mas" onclick="vendor&&openWA(vendor.wa)">🔴 MyZaka</span>
+      <span class="ptag pt-org" onclick="vendor&&openWA(vendor.wa)">🟠 Orange Money</span>
+    </div>
+    <div class="det-cta">
+      <button class="add-btn" onclick="addToSum(${id});closeAllPanels()">＋ Add to Sum</button>
+      <div class="contact-btns">
+        ${vendor?`<button style="background:#1aad2b;color:#fff" onclick="openWA('${vendor.wa}')">💬 WhatsApp</button>`:''}
+        ${vendor?`<button style="background:#1877f2;color:#fff" onclick="openFB('${vendor.fb}')">📘 Gallery</button>`:''}
+      </div>
+    </div>`;
+  openPanel('itemDetailPanel');
+}
+
+// ── PROMOS RENDER ─────────────────────────────────
+function renderPromos(){
+  document.getElementById('promosBody').innerHTML=PROMOS.map(p=>`
+  <div class="promo-card">
+    <button class="pc-share" onclick="sharePromo('${p.code}','${p.title}')">📲 Share</button>
+    <span class="pc-badge">${p.discount}</span>
+    <h4>${p.title}</h4>
+    <p>${p.body}<br><span style="font-size:10px;opacity:0.7">Valid until ${p.expires} · ${p.vendor}</span></p>
+    <span class="pc-code">${p.code}</span>
+  </div>`).join('');
+}
+function sharePromo(code,title){
+  openWA('?text='+encodeURIComponent(`🔥 Namatose Promo!\n\n*${title}*\nCode: *${code}*\n\nShop on Namatose — Botswana's Community Feeds Platform 🥩`));
+}
+
+// ── NOTICES RENDER ────────────────────────────────
+function renderNotices(){
+  document.getElementById('noticesBody').innerHTML=NOTICES.map(n=>`
+  <div class="nc">
+    <div class="nc-head">
+      <div class="nc-thumb">${n.emoji}</div>
+      <div class="nc-body">
+        <h4>${n.title}</h4>
+        <p>${n.body}</p>
+        <div class="nc-price">${n.price}</div>
+        <div class="nc-vendor">${n.vendor} · ${n.date}</div>
+      </div>
+    </div>
+    <div class="nc-foot">
+      ${n.vendorId?`<button class="wa-btn" onclick="openWA(VENDORS.find(v=>v.id===${n.vendorId})?.wa||'')">💬 WhatsApp</button>`:''}
+      ${n.vendorId?`<button class="fb-btn" onclick="openFB(VENDORS.find(v=>v.id===${n.vendorId})?.fb||'')">f Gallery</button>`:''}
+      <button style="background:var(--leaf);color:#fff;border:none;padding:6px 12px;border-radius:6px;font-size:11px;font-weight:700;cursor:pointer;margin-left:auto" onclick="toast('Enquiry sent via WhatsApp!')">Enquire</button>
+    </div>
+  </div>`).join('');
+}
+
+// ── PROFILE RENDER ────────────────────────────────
+function renderProfile(){
+  const u=APP.user;
+  const pr=PROFILES[APP.currentProfile]||PROFILES.man;
+  const isVendorOrAdmin=['butcher','grocery','refrigeration','admin'].includes(APP.currentProfile);
+  const isMgr=APP.currentProfile==='motshelo_mgr';
+  document.getElementById('profileBody').innerHTML=`
+  <div class="profile-hero">
+    <div class="pic-wrap" onclick="document.getElementById('profilePicInput').click()">
+      <div class="pic-circle" id="profilePicEl">
+        ${u.profilePic?`<img src="${u.profilePic}" alt="Profile">`:'🧑🏾'}
+      </div>
+      <div class="pic-edit-badge">✏️</div>
+    </div>
+    <div class="hero-info">
+      <h2>${u.firstName} ${u.lastName}</h2>
+      <div class="hero-role">${pr.emoji} ${pr.name}</div>
+      <div class="hero-loc">📍 ${u.city} · ${u.area} · ${u.whatsapp}</div>
+    </div>
+  </div>
+
+  <div style="padding:12px">
+    <!-- Personal Details -->
+    <div class="psect">
+      <div class="psect-hdr" onclick="toggleSection('personal')">
+        <h3>👤 Personal Details</h3>
+        <span class="chev" id="chevsPersonal">▼</span>
+      </div>
+      <div class="psect-body" id="spersonal">
+        <div class="field"><label>First Name</label><input type="text" id="ed_fn" value="${u.firstName}"></div>
+        <div class="field"><label>Last Name</label><input type="text" id="ed_ln" value="${u.lastName}"></div>
+        <div class="field"><label>WhatsApp Number</label><input type="tel" id="ed_wa" value="${u.whatsapp}"></div>
+        <div class="field"><label>Email</label><input type="email" id="ed_em" value="${u.email}"></div>
+        <div class="field"><label>Gender</label>
+          <select id="ed_gen"><option>Male</option><option>Female</option></select>
+        </div>
+        <div class="field"><label>City / Town</label>
+          <select id="ed_city">${MASTER.cities.map(c=>`<option ${c===u.city?'selected':''}>${c}</option>`).join('')}</select>
+        </div>
+        <div class="field"><label>Area / Neighbourhood</label>
+          <select id="ed_area">${MASTER.hoods.map(a=>`<option ${a===u.area?'selected':''}>${a}</option>`).join('')}</select>
+        </div>
+        <div class="save-row"><button class="save-btn" onclick="savePersonal()">💾 Save Personal Info</button></div>
+      </div>
+    </div>
+
+    <!-- Mobile Money -->
+    <div class="psect">
+      <div class="psect-hdr" onclick="toggleSection('money')">
+        <h3>💳 Mobile Money</h3>
+        <span class="chev" id="chevsMoney">▼</span>
+      </div>
+      <div class="psect-body" id="smoney">
+        <div class="field"><label>Primary Network</label>
+          <select id="ed_net">${MASTER.networks.map(n=>`<option ${n===u.network?'selected':''}>${n}</option>`).join('')}</select>
+        </div>
+        <div class="field">
+          <label>🔷 BTC Smega Number</label>
+          <input type="tel" id="ed_btc" value="${u.btcSmega}" placeholder="+267 7X XXX XXX">
+          <p style="font-size:10px;color:#0057a8;margin-top:4px">Official Partner — BTC Mobile Smega</p>
+        </div>
+        <div class="field">
+          <label>🔴 Mascom MyZaka Number</label>
+          <input type="tel" id="ed_myz" value="${u.myzaka}" placeholder="+267 7X XXX XXX">
+          <p style="font-size:10px;color:#c0060f;margin-top:4px">Official Partner — Mascom MyZaka</p>
+        </div>
+        <div class="field">
+          <label>🟠 Orange Money Number</label>
+          <input type="tel" id="ed_org" value="${u.orangeMoney}" placeholder="+267 7X XXX XXX">
+          <p style="font-size:10px;color:#d45f1e;margin-top:4px">Official Partner — Orange Money</p>
+        </div>
+        <div class="save-row"><button class="save-btn" onclick="saveMoney()">💾 Save Payment Info</button></div>
+      </div>
+    </div>
+
+    <!-- Permissions -->
+    <div class="psect">
+      <div class="psect-hdr" onclick="toggleSection('perms')">
+        <h3>🔐 Profile Permissions</h3>
+        <span class="chev" id="chevsPerms">▼</span>
+      </div>
+      <div class="psect-body" id="sperms">
+        <p style="font-size:12px;color:#6b7c71;margin-bottom:10px">Current: <strong>${pr.emoji} ${pr.name}</strong> — <span class="ps-badge ${pr.badgeClass}" style="display:inline-block;margin-left:4px">${pr.badge}</span></p>
+        <ul class="perm-list">
+          ${pr.perms.map(p=>`<li><span class="pi">${p.ok?'✅':'❌'}</span>${p.text}</li>`).join('')}
+        </ul>
+        <div class="bothoflow-note">⚖️ <strong>Bothoflow™</strong> Permission Engine. All role-based access is copyright protected. Structural changes would compromise platform efficiency — protected in trust for the Masalila family.</div>
+        <div class="save-row"><button class="save-btn" style="background:var(--fog);color:var(--leaf);border:1.5px solid var(--border-med)" onclick="openProfileSwitcher()">↕️ Switch Profile</button></div>
+      </div>
+    </div>
+
+    <!-- My Sums -->
+    <div class="psect">
+      <div class="psect-hdr" onclick="toggleSection('mysums')">
+        <h3>📊 My Sums</h3>
+        <span class="chev" id="chevsMysums">▼</span>
+      </div>
+      <div class="psect-body" id="smysums">
+        ${SAVED_SUMS.map((s,i)=>`
+        <div class="ss-row">
+          <div><div class="ss-name">${s.name}</div><div class="ss-meta">${s.schedule} · ${s.items.length} items · ${P(s.budget)}</div></div>
+          <button class="ss-load" onclick="loadSavedSum(${i})">Load</button>
+        </div>`).join('')}
+        <div class="save-row"><button class="save-btn" onclick="openNewSumPanel()">＋ Create New Sum</button></div>
+      </div>
+    </div>
+
+    <!-- Motshelo -->
+    ${renderMotsheloSection()}
+
+    <!-- Vendor KPI (vendor/admin only) -->
+    ${isVendorOrAdmin ? renderVendorKPI() : ''}
+
+    <!-- Stock Inventory (vendor only) -->
+    ${isVendorOrAdmin ? renderStockInventory() : ''}
+  </div>`;
+}
+
+// ── MOTSHELO SECTION ──────────────────────────────
+function renderMotsheloSection(){
+  const g=MOTSHELO.group;
+  const m=MOTSHELO.members;
+  const totalContrib=m.reduce((a,mem)=>a+(mem.weeks*50),0);
+  const paidCount=m.filter(mem=>mem.paid).length;
+  const v=MOTSHELO.currentVote;
+  const isMgr=['motshelo_mgr','admin'].includes(APP.currentProfile);
+
+  return`<div class="psect">
+    <div class="psect-hdr" onclick="toggleSection('motshelo')">
+      <h3>🏦 Motshelo</h3>
+      <span class="chev" id="chevsMotshelo">▼</span>
+    </div>
+    <div class="psect-body" id="smotshelo">
+      <div style="background:linear-gradient(135deg,#0a2415,#1a4228);border-radius:var(--r-sm);overflow:hidden;margin-bottom:10px">
+        <div class="mot-hero">
+          <h3>${g.name}</h3>
+          <p>Manager: ${g.manager} · ${g.contribution.rate} · P${g.contribution.amount}/member</p>
+          <span class="mot-state-badge st-active">${g.state}</span>
+        </div>
+        <div class="mot-stats">
+          <div class="mst"><div class="mv">${P(totalContrib)}</div><div class="ml">Group Total</div></div>
+          <div class="mst"><div class="mv">${m.length}</div><div class="ml">Members</div></div>
+          <div class="mst"><div class="mv">${paidCount}/${m.length}</div><div class="ml">Paid Up</div></div>
+        </div>
+      </div>
+
+      <div class="mtabs">
+        <div class="mtab on" onclick="switchMotsheloTab('members',this)">Members (${m.length})</div>
+        <div class="mtab" onclick="switchMotsheloTab('vote',this)">Vote</div>
+        <div class="mtab" onclick="switchMotsheloTab('borrow',this)">Borrow</div>
+        <div class="mtab" onclick="switchMotsheloTab('inventory',this)">Stock</div>
+      </div>
+
+      <div id="mtab-members">
+        ${m.map(mem=>`
+        <div class="mem-row">
+          <div>
+            <div class="mn">${mem.name} ${mem.name==='Paphani Masalila'?'⭐':''}</div>
+            <div class="msub">${mem.role} · ${mem.network} · ${mem.city}</div>
+          </div>
+          <div style="text-align:right">
+            <div class="mamount">${P(mem.weeks*50)}</div>
+            <div class="mstatus ${mem.paid?'paid':'unpaid'}">${mem.paid?'✅ Paid':'⚠️ Outstanding'}</div>
+          </div>
+        </div>`).join('')}
+        ${isMgr?`<div style="padding:10px 14px"><button class="save-btn" onclick="toast('Add member form — links to WhatsApp group!')">＋ Add Member</button></div>`:''}
+      </div>
+
+      <div id="mtab-vote" style="display:none">
+        <div class="vote-box">
+          <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:8px">
+            <h4>🗳️ ${v.animalId} Vote</h4>
+            <span class="mot-state-badge st-voting" style="font-size:9px">${v.state}</span>
+          </div>
+          <div class="vote-meta">
+            <p>Beast: ${v.animalDesc}</p>
+            <p>Mode: ${v.shareType} · Deadline: ${v.deadline}</p>
+            <p>Total Cost: <strong>${P(v.totalCost)}</strong></p>
+          </div>
+          <div class="vote-progress">
+            <div class="vp-item"><div class="vv vyes">✅ ${v.votes.yes}</div><div class="vl">Yes</div></div>
+            <div class="vp-item"><div class="vv vno">❌ ${v.votes.no}</div><div class="vl">No</div></div>
+            <div class="vp-item"><div class="vv vabs">○ ${v.votes.abstain}</div><div class="vl">Abstain</div></div>
+            <div class="vp-item"><div class="vv" style="color:var(--ink)">${v.votes.total}</div><div class="vl">Total</div></div>
+          </div>
+          <div class="vote-btns">
+            <button class="vbtn vbtn-yes" onclick="castVote('yes')">✅ YES</button>
+            <button class="vbtn vbtn-no" onclick="castVote('no')">❌ NO</button>
+            <button class="vbtn vbtn-abs" onclick="castVote('abstain')">○ ABSTAIN</button>
+          </div>
+          <p style="font-size:10px;color:#6b7c71;margin-top:8px">⚠️ Min 4 independent confirmations required to execute. Cannot confirm own vote.</p>
+        </div>
+        ${isMgr?`<div style="padding:0 14px 14px"><button class="save-btn" onclick="toast('New vote session created!')">＋ Create New Vote Session</button></div>`:''}
+      </div>
+
+      <div id="mtab-borrow" style="display:none">
+        <div style="padding:10px 14px 0">
+          <p style="font-size:11px;font-weight:700;color:#6b7c71;margin-bottom:8px;text-transform:uppercase;letter-spacing:0.5px">Borrow Requests</p>
+          ${MOTSHELO.borrowRequests.map(br=>`
+          <div class="borrow-card">
+            <div style="display:flex;justify-content:space-between">
+              <h4>${br.member} — ${P(br.amount)}</h4>
+              <span class="mot-state-badge ${br.state==='CONFIRMING'?'st-voting':'st-locked'}" style="font-size:9px">${br.state}</span>
+            </div>
+            <p>${br.reason} · Repay by ${br.repayDate}</p>
+            <div style="margin-top:8px">
+              <p style="font-size:10px;color:#6b7c71;margin-bottom:5px">Confirmations required (min 4):</p>
+              <div class="confirms">
+                ${[1,2,3,4].map(i=>`<div class="conf-dot ${i<=br.confirmations?'done':'need'}">${i<=br.confirmations?'✓':i}</div>`).join('')}
+              </div>
+            </div>
+            ${APP.currentProfile!=='browser'?`<button class="save-btn" style="margin-top:8px;font-size:12px;padding:9px" onclick="toast('Confirmation #${br.confirmations+1} recorded!')">Confirm Request</button>`:''}
+          </div>`).join('')}
+          <button class="save-btn" onclick="toast('Borrow request submitted for group vote!')">＋ Submit Borrow Request</button>
+          <div style="background:var(--fog);border-radius:var(--r-sm);padding:10px;margin-top:10px;font-size:11px;color:#6b7c71;line-height:1.7">
+            💳 <strong>Payment Methods Accepted:</strong><br>
+            🔷 BTC Smega &nbsp; 🔴 Mascom MyZaka &nbsp; 🟠 Orange Money &nbsp; 💵 Cash<br>
+            All payments confirmed manually by minimum 4 group members.
+          </div>
+        </div>
+      </div>
+
+      <div id="mtab-inventory" style="display:none">
+        <div style="padding:10px 14px 14px">
+          ${MOTSHELO.inventory.map(inv=>{
+            const rem=inv.totalPeople-inv.registered;
+            return`<div class="borrow-card">
+              <div style="display:flex;justify-content:space-between;align-items:flex-start">
+                <h4>${inv.beastId} — ${inv.type}</h4>
+                <span class="${rem<=0?'status-full':'status-open'}" style="font-size:9px;padding:2px 7px;border-radius:20px;font-weight:700">${rem<=0?'FULL ✅':`${rem} slots left`}</span>
+              </div>
+              <p>${inv.weight}kg · P${inv.priceKg}/kg · ${P(inv.weight*inv.priceKg*1.075)} total</p>
+              <p style="margin-top:3px">${inv.registered}/${inv.totalPeople} registered · ${rem<=0?'P100 fee triggered':'Awaiting registration'}</p>
+            </div>`;
+          }).join('')}
+        </div>
+      </div>
+    </div>
+  </div>`;
+}
+
+function switchMotsheloTab(tab,btn){
+  ['members','vote','borrow','inventory'].forEach(t=>{
+    const el=document.getElementById('mtab-'+t);
+    if(el)el.style.display=t===tab?'block':'none';
+  });
+  btn.closest('.mtabs').querySelectorAll('.mtab').forEach(b=>b.classList.remove('on'));
+  btn.classList.add('on');
+}
+
+function castVote(type){
+  const labels={yes:'✅ YES vote cast and recorded!',no:'❌ NO vote cast.',abstain:'○ Abstained from vote.'};
+  closeAllPanels();toast(labels[type]);
+}
+
+// ── VENDOR KPI ────────────────────────────────────
+function renderVendorKPI(){
+  return`<div class="psect">
+    <div class="psect-hdr" onclick="toggleSection('kpis')">
+      <h3>📈 Vendor KPI Dashboard</h3>
+      <span class="chev" id="chevsKpis">▼</span>
+    </div>
+    <div class="psect-body" id="skpis">
+      <p style="font-size:11px;color:#6b7c71;margin-bottom:10px">Anonymised micro-grouped data. Minimum 2-person clusters. Up to 500 micro clusters.</p>
+      <div class="kpi-grid">
+        ${KPIS.map(k=>`<div class="kpi-box"><div class="kv">${k.val}</div><div class="kl">${k.lbl}</div><div class="kt">${k.trend}</div></div>`).join('')}
+      </div>
+      <div class="kpi-heatmap">
+        <p style="font-size:11px;font-weight:700;color:#6b7c71">Demand Heatmap — Gaborone (Past 4 weeks)</p>
+        <div class="hm-grid">
+          ${Array(28).fill(0).map(()=>`<div class="hm-cell hm${Math.floor(Math.random()*5)}"></div>`).join('')}
+        </div>
+        <p style="font-size:9px;color:#6b7c71;text-align:center;margin-top:5px">Each cell = 1 day. Darker = higher community demand.</p>
+      </div>
+      <div style="padding:0 12px 12px">
+        <button class="save-btn" onclick="toast('KPI report generated & shared via WhatsApp!')">📊 Generate Report</button>
+      </div>
+    </div>
+  </div>`;
+}
+
+function renderStockInventory(){
+  const stock=[
+    {date:'2025-09-01',item:'Rump Steak',recv:45,sold:32,notes:'Busy weekend'},
+    {date:'2025-09-01',item:'Beef Mince',recv:60,sold:55,notes:'Steady demand'},
+    {date:'2025-09-01',item:'Chicken (Full)',recv:30,sold:28,notes:'Near sell-out'},
+    {date:'2025-09-02',item:'Kudu Steak',recv:20,sold:15,notes:'Game special'},
+  ];
+  return`<div class="psect">
+    <div class="psect-hdr" onclick="toggleSection('stock')">
+      <h3>📦 Stock Inventory</h3>
+      <span class="chev" id="chevsStock">▼</span>
+    </div>
+    <div class="psect-body" id="sstock">
+      <p style="font-size:11px;color:#6b7c71;margin-bottom:8px">Daily butchery stock tracking. Outside of main Namatose calculator system.</p>
+      <table class="stock-table">
+        <thead><tr><th>Date</th><th>Item</th><th>Recv (kg)</th><th>Sold (kg)</th><th>Remaining</th><th>Notes</th></tr></thead>
+        <tbody>
+          ${stock.map(s=>`<tr><td>${s.date}</td><td>${s.item}</td><td>${s.recv}kg</td><td>${s.sold}kg</td><td><strong>${s.recv-s.sold}kg</strong></td><td>${s.notes}</td></tr>`).join('')}
+        </tbody>
+      </table>
+      <button class="save-btn" style="margin-top:10px" onclick="toast('Stock entry saved!')">＋ Add Stock Entry</button>
+    </div>
+  </div>`;
+}
+
+// ── PROFILE SWITCHER ──────────────────────────────
+function openProfileSwitcher(){
+  document.getElementById('psList').innerHTML=Object.values(PROFILES).map(p=>`
+  <div class="ps-item" onclick="switchProfile('${p.id}')">
+    <div class="ps-avatar">${p.emoji}</div>
+    <div class="ps-info">
+      <h4>${p.name}</h4>
+      <p>${p.perms.length} permissions</p>
+    </div>
+    <span class="ps-badge ${p.badgeClass}">${p.badge}</span>
+    ${APP.currentProfile===p.id?'<span class="ps-check">✓</span>':''}
+  </div>`).join('');
+  openPanel('profileSwitcherPanel');
+}
+
+function switchProfile(id){
+  APP.currentProfile=id;
+  saveState();
+  closeAllPanels();
+  toast(`Profile: ${PROFILES[id].name}`);
+  if(APP.currentView==='profile') renderProfile();
+}
+
+// ── SAVE PROFILE DATA ─────────────────────────────
+function savePersonal(){
+  APP.user.firstName=document.getElementById('ed_fn').value;
+  APP.user.lastName=document.getElementById('ed_ln').value;
+  APP.user.whatsapp=document.getElementById('ed_wa').value;
+  APP.user.email=document.getElementById('ed_em').value;
+  APP.user.city=document.getElementById('ed_city').value;
+  APP.user.area=document.getElementById('ed_area').value;
+  saveState();renderProfile();
+  toast('Personal info saved! ✅');
+}
+function saveMoney(){
+  APP.user.network=document.getElementById('ed_net').value;
+  APP.user.btcSmega=document.getElementById('ed_btc').value;
+  APP.user.myzaka=document.getElementById('ed_myz').value;
+  APP.user.orangeMoney=document.getElementById('ed_org').value;
+  saveState();
+  toast('Payment info saved! ✅');
+}
+function handleProfilePicChange(e){
+  const f=e.target.files[0];if(!f)return;
+  const r=new FileReader();
+  r.onload=ev=>{
+    APP.user.profilePic=ev.target.result;
+    saveState();
+    const el=document.getElementById('profilePicEl');
+    if(el)el.innerHTML=`<img src="${ev.target.result}" alt="Profile">`;
+    toast('Profile photo updated! 📸');
+  };
+  r.readAsDataURL(f);
+}
+
+// ── VIEW SWITCHING ────────────────────────────────
+function setView(view,btn){
+  document.querySelectorAll('.view').forEach(v=>v.classList.remove('active'));
+  document.querySelectorAll('.nb').forEach(b=>b.classList.remove('on'));
+  document.getElementById('view-'+view).classList.add('active');
+  btn.classList.add('on');
+  document.getElementById('hdrPageName').textContent=view.charAt(0).toUpperCase()+view.slice(1);
+  document.getElementById('sumHeader').style.display=view==='profile'?'none':'block';
+  APP.currentView=view;
+  if(view==='promos') renderPromos();
+  if(view==='notices') renderNotices();
+  if(view==='profile') renderProfile();
+  document.getElementById('noteBody').scrollTop=0;
+}
+
+// ── PANELS ────────────────────────────────────────
+function openPanel(id){
+  document.getElementById(id).classList.add('open');
+  document.getElementById('overlay').classList.add('show');
+  document.body.classList.add('panel-open');
+}
+function closeAllPanels(){
+  document.querySelectorAll('.slide-panel').forEach(p=>p.classList.remove('open'));
+  document.getElementById('overlay').classList.remove('show');
+  document.body.classList.remove('panel-open');
+}
+
+// ── CREATE ITEM ───────────────────────────────────
+let ciPhotoData=null;
+function openCreateItem(){openPanel('createItemPanel');}
+function previewUploadedPic(e){
+  const f=e.target.files[0];if(!f)return;
+  const r=new FileReader();
+  r.onload=ev=>{
+    ciPhotoData=ev.target.result;
+    document.getElementById('imgUploadPreview').innerHTML=`<img src="${ev.target.result}" style="width:100%;height:100%;object-fit:cover">`;
+    document.querySelector('#imgUploadArea p').textContent='Tap to change photo';
+  };r.readAsDataURL(f);
+}
+function saveNewItem(){
+  const name=document.getElementById('ci_name').value.trim();
+  const price=parseFloat(document.getElementById('ci_price').value);
+  if(!name||!price){toast('Please fill name & price');return;}
+  const newItem={
+    id:Date.now(),
+    cat:document.getElementById('ci_cat').value,
+    name,price,
+    unit:document.getElementById('ci_unit').value||'per unit',
+    vendor:document.getElementById('ci_vendor').value||'My Listing',
+    cut:document.getElementById('ci_cut').value,
+    desc:document.getElementById('ci_desc').value,
+    emoji:'📦',photo:ciPhotoData,
+    shareType:document.getElementById('ci_dist').value.includes('Divide')?'divide':document.getElementById('ci_dist').value.includes('Share')?'share':'none',
+  };
+  APP.customItems.push(newItem);
+  saveState();closeAllPanels();renderItems();
+  toast(`${name} saved! ✅`);
+  // Reset
+  document.getElementById('ci_name').value='';document.getElementById('ci_price').value='';
+  ciPhotoData=null;document.getElementById('imgUploadPreview').innerHTML='<div style="font-size:40px">📷</div>';
+  document.querySelector('#imgUploadArea p').textContent='Tap to add photo';
+}
+
+// ── NEW SUM ───────────────────────────────────────
+function openNewSumPanel(){
+  renderSavedSumsPanel();
+  openPanel('newSumPanel');
+}
+function renderSavedSumsPanel(){
+  document.getElementById('sumPanelSaved').innerHTML=SAVED_SUMS.map((s,i)=>`
+  <div class="ss-row">
+    <div><div class="ss-name">${s.name}</div><div class="ss-meta">${s.schedule} · ${s.items.length} items · ${P(s.budget)}</div></div>
+    <button class="ss-load" onclick="loadSavedSum(${i})">Load</button>
+  </div>`).join('');
+}
+function switchSumPanelTab(t,el){
+  document.getElementById('sumPanelCreate').style.display=t==='create'?'block':'none';
+  document.getElementById('sumPanelSaved').style.display=t==='saved'?'block':'none';
+  el.closest('.tab-row').querySelectorAll('.tab-item').forEach(e=>e.classList.remove('on'));
+  el.classList.add('on');
+}
+function createSum(){
+  const name=document.getElementById('ns_name').value.trim();
+  const budget=parseFloat(document.getElementById('ns_budget').value);
+  if(!name||!budget){toast('Please fill name & budget');return;}
+  APP.sum={name,budget,schedule:document.getElementById('ns_sched').value,items:[]};
+  saveState();renderSumHeader();closeAllPanels();
+  toast(`"${name}" created!`);
+}
+function loadSavedSum(i){
+  const s=SAVED_SUMS[i];
+  APP.sum={name:s.name,budget:s.budget,schedule:s.schedule,items:[...s.items]};
+  saveState();renderSumHeader();closeAllPanels();
+  toast(`"${s.name}" loaded!`);
+}
+
+// ── SHARE APP ─────────────────────────────────────
+function shareApp(){
+  openWA('?text='+encodeURIComponent('🥩 Join me on *Namatose* — Botswana\'s Community Feeds Platform!\n\nBudget your meat, join Motshelo groups, find deals direct from local vendors.\n\nPowered by Bothoflow™ — designed for Botswana.'));
+}
+
+// ── INIT ──────────────────────────────────────────
+loadState();
+</script>
+</body>
+</html>
