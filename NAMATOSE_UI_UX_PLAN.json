@@ -1,0 +1,650 @@
+{
+  "platform": {
+    "name": "Namatose",
+    "version": "2.0",
+    "architecture": "Bothoflow™",
+    "designSystem": "SNIS (Sums / Notes / Items)",
+    "designPhilosophy": "Accordion-based single-page expandable",
+    "platform": "Offline-first HTML Android WebApp (PWA)",
+    "region": "Botswana",
+    "partners": ["BTC Smega", "Mascom MyZaka", "Orange Money"]
+  },
+
+  "pageTally": {
+    "totalScreens": 2,
+    "totalViews": 4,
+    "totalSlidePanels": 4,
+    "totalOverlayComponents": 3,
+    "totalProfileTypes": 8,
+    "totalAccordionSections": 15,
+    "grandTotal": 13
+  },
+
+  "screens": {
+    "1_login": {
+      "id": "loginScreen",
+      "type": "full-screen",
+      "access": "public",
+      "purpose": "Entry point / Authentication",
+      "wireframe": {
+        "layout": "centered-card",
+        "background": "forest-green gradient with radial accents",
+        "elements": [
+          {"type": "logo-mark", "content": "🥩", "size": "72px"},
+          {"type": "brand-title", "content": "NAMATOSE"},
+          {"type": "tagline", "content": "Community Feeds Platform · Botswana"},
+          {"type": "login-card", "fields": ["First Name", "WhatsApp Number", "Password"]},
+          {"type": "submit-button", "label": "ENTER NAMATOSE →"},
+          {"type": "partner-tags", "content": "🔷 BTC 🔴 Mascom 🟠 Orange"},
+          {"type": "footer", "content": "© 2025 Namatose · Bothoflow™ Protected"}
+        ]
+      },
+      "ux": {
+        "prefilled": {"firstName": "Paphani", "whatsapp": "+267 71 234 567", "password": "demo2025"},
+        "behavior": "Any credentials work (Browser mode)",
+        "onSuccess": "Navigate to appScreen, persist to localStorage"
+      }
+    },
+
+    "2_appShell": {
+      "id": "appScreen",
+      "type": "container",
+      "access": "authenticated",
+      "purpose": "Main app wrapper with 4-level structure",
+      "wireframe": {
+        "layout": "4-level-deep",
+        "level1": {
+          "id": "topHeader",
+          "position": "fixed-top",
+          "behavior": "hides on scroll",
+          "elements": ["logo", "page-name", "profile-btn", "share-btn"]
+        },
+        "level2": {
+          "id": "sumHeader",
+          "position": "below header",
+          "behavior": "expandable accordion",
+          "collapsed": "budget summary",
+          "expanded": "item list + actions"
+        },
+        "level3": {
+          "id": "noteBody",
+          "position": "scrollable content",
+          "contains": ["view-items", "view-promos", "view-notices", "view-profile"]
+        },
+        "level4": {
+          "id": "bottomNav",
+          "position": "fixed-bottom",
+          "tabs": ["items", "promos", "notices", "profile"]
+        }
+      }
+    }
+  },
+
+  "views": {
+    "view_items": {
+      "id": "view-items",
+      "label": "Items",
+      "icon": "🥩",
+      "purpose": "Main product catalog",
+      "wireframe": {
+        "header": "🔥 Live Deals & Promotions",
+        "components": [
+          {"id": "catPills", "type": "horizontal-scroll", "count": 9},
+          {"id": "categoryCards", "type": "accordion", "count": 8},
+          {"id": "beastSection", "type": "expandable"},
+          {"id": "inventorySection", "type": "expandable"}
+        ]
+      },
+      "categories": [
+        {"id": "beef", "emoji": "🥩", "items": 12},
+        {"id": "goat", "emoji": "🐐", "items": 5},
+        {"id": "chicken", "emoji": "🍗", "items": 5},
+        {"id": "game", "emoji": "🦌", "items": 6},
+        {"id": "pork", "emoji": "🐷", "items": 2},
+        {"id": "sheep", "emoji": "🍖", "items": 2},
+        {"id": "groceries", "emoji": "🛒", "items": 7},
+        {"id": "services", "emoji": "⚙️", "items": 2}
+      ],
+      "beasts": [
+        {"id": "Beast01", "type": "Cow - Nguni", "weight": "250kg", "slots": 55},
+        {"id": "PiggyOink43", "type": "Pig - Landrace", "weight": "237kg", "slots": 49},
+        {"id": "giffy45", "type": "Game - Impala", "weight": "190.5kg", "slots": 31}
+      ],
+      "ux": {
+        "filterBehavior": "Tap category pill to filter",
+        "expandBehavior": "Tap card header to toggle",
+        "itemTap": "Opens itemDetailPanel",
+        "vendorStrip": "Appears below each category"
+      }
+    },
+
+    "view_promos": {
+      "id": "view-promos",
+      "label": "Promos",
+      "icon": "🔥",
+      "purpose": "Deals and promotions",
+      "wireframe": {
+        "layout": "vertical-card-stack",
+        "components": [
+          {"type": "promo-card", "count": 5}
+        ]
+      },
+      "promos": [
+        {"title": "10% OFF Rump Steak", "code": "NAMATOSE10", "vendor": "86th Ave Butchery"},
+        {"title": "Free Delivery on Group Orders", "code": "GRPFREE", "vendor": "Ditiro Transport"},
+        {"title": "P50 Rebate - First Group", "code": "MOTSHELO50", "vendor": "Namatose"},
+        {"title": "Zero Fees Weekend - MyZaka", "code": "MYZAKAZERO", "vendor": "Mascom"},
+        {"title": "Fresh Spinach - Buy 3 Get 1", "code": "SPINACH4", "vendor": "Oodi Farm"}
+      ],
+      "ux": {
+        "shareBehavior": "Tap share button → WhatsApp deep link"
+      }
+    },
+
+    "view_notices": {
+      "id": "view-notices",
+      "label": "Notices",
+      "icon": "📋",
+      "purpose": "Notice board with vendor posts",
+      "wireframe": {
+        "layout": "vertical-card-stack",
+        "components": [
+          {"type": "notice-card", "count": 6}
+        ]
+      },
+      "noticeTypes": [
+        {"type": "stock", "icon": "🔥"},
+        {"type": "event", "icon": "📅"},
+        {"type": "service", "icon": "❄️"},
+        {"type": "produce", "icon": "🌱"},
+        {"type": "group", "icon": "🐃"}
+      ],
+      "ux": {
+        "whatsappBtn": "Tap to open WhatsApp",
+        "fbGalleryBtn": "Tap to open Facebook"
+      }
+    },
+
+    "view_profile": {
+      "id": "view-profile",
+      "label": "Profile",
+      "icon": "👤",
+      "purpose": "User profile + settings + Motshelo + Vendor KPI",
+      "wireframe": {
+        "components": [
+          {"id": "profileHero", "type": "header"},
+          {"id": "psect-personal", "type": "accordion", "label": "Personal Details"},
+          {"id": "psect-money", "type": "accordion", "label": "Mobile Money"},
+          {"id": "psect-perms", "type": "accordion", "label": "Profile Permissions"},
+          {"id": "psect-sums", "type": "accordion", "label": "My Sums"},
+          {"id": "psect-motshelo", "type": "accordion", "label": "Motshelo", "tabs": 4},
+          {"id": "psect-kpis", "type": "accordion", "label": "Vendor KPI", "conditional": true},
+          {"id": "psect-stock", "type": "accordion", "label": "Stock Inventory", "conditional": true}
+        ]
+      },
+      "motsheloTabs": [
+        {"id": "members", "label": "Members", "count": 12},
+        {"id": "vote", "label": "Vote", "state": "OPEN"},
+        {"id": "borrow", "label": "Borrow", "requests": 2},
+        {"id": "inventory", "label": "Stock", "beasts": 3}
+      ],
+      "ux": {
+        "accordionBehavior": "Tap header to expand/collapse",
+        "saveBehavior": "Save to localStorage on button click",
+        "profileSwitch": "Opens profileSwitcherPanel"
+      }
+    }
+  },
+
+  "slidePanels": {
+    "profileSwitcherPanel": {
+      "id": "profileSwitcherPanel",
+      "trigger": "Top header profile button OR profile section",
+      "purpose": "Change user role/permissions",
+      "wireframe": {
+        "layout": "vertical-list",
+        "items": [
+          {"emoji": "👨🏾", "name": "Paphani Masalila", "badge": "User"},
+          {"emoji": "👩🏾", "name": "Kefilwe Sebele", "badge": "User"},
+          {"emoji": "🏦", "name": "Paphani Masalila", "badge": "Manager"},
+          {"emoji": "🔪", "name": "86th Ave Butchery", "badge": "Vendor"},
+          {"emoji": "❄️", "name": "CoolChain Services", "badge": "Supplier"},
+          {"emoji": "🛒", "name": "Fresh Picks Market", "badge": "Vendor"},
+          {"emoji": "⚙️", "name": "Developer Admin", "badge": "Admin"},
+          {"emoji": "🌐", "name": "Browser User", "badge": "Free"}
+        ]
+      },
+      "ux": {
+        "tapAction": "Switches profile, closes panel, re-renders profile view"
+      }
+    },
+
+    "itemDetailPanel": {
+      "id": "itemDetailPanel",
+      "trigger": "Tap item card in Items View",
+      "purpose": "View item details, add to sum, contact vendor",
+      "wireframe": {
+        "layout": "vertical-stack",
+        "sections": [
+          {"id": "imageArea", "height": "170px"},
+          {"id": "infoRows", "fields": ["Price", "Vendor", "Category"]},
+          {"id": "shareOptions", "conditional": "only for beasts"},
+          {"id": "paymentTags", "options": ["Cash", "BTC", "MyZaka", "Orange"]},
+          {"id": "actionButtons", "buttons": ["Add to Sum", "WhatsApp", "Facebook"]}
+        ]
+      },
+      "ux": {
+        "shareToggle": "Tap to select Large/Med/Small",
+        "addToSum": "Adds item, closes panel, shows toast",
+        "whatsapp": "Opens WhatsApp with vendor number",
+        "facebook": "Opens Facebook gallery"
+      }
+    },
+
+    "createItemPanel": {
+      "id": "createItemPanel",
+      "trigger": "Tap '+ Create' pill in Items View",
+      "purpose": "Add custom item to catalog",
+      "wireframe": {
+        "layout": "form-stack",
+        "fields": [
+          {"id": "photo", "type": "upload", "label": "Tap to add photo"},
+          {"id": "name", "type": "text", "required": true},
+          {"id": "category", "type": "select", "options": ["Beef", "Goat", "Chicken", "Game", "Pork", "Sheep/Lamb", "Groceries", "Services"]},
+          {"id": "price", "type": "number", "required": true},
+          {"id": "unit", "type": "text"},
+          {"id": "vendor", "type": "text"},
+          {"id": "cut", "type": "select"},
+          {"id": "distribution", "type": "select"},
+          {"id": "description", "type": "textarea"},
+          {"id": "publish", "type": "checkbox", "label": "Publish to community"}
+        ],
+        "buttons": ["Cancel", "Save Item"]
+      },
+      "ux": {
+        "validation": "Name and price required",
+        "photoPreview": "Shows uploaded image",
+        "saveAction": "Adds to APP.customItems, re-renders items"
+      }
+    },
+
+    "newSumPanel": {
+      "id": "newSumPanel",
+      "trigger": "Profile → My Sums OR Sum Header → New Sum",
+      "purpose": "Create or load budget",
+      "wireframe": {
+        "layout": "tabbed-panel",
+        "tabs": [
+          {"id": "create", "label": "New Sum"},
+          {"id": "saved", "label": "My Saved Sums"}
+        ],
+        "createFields": [
+          {"id": "name", "type": "text", "placeholder": "e.g. Family Monthly Budget"},
+          {"id": "budget", "type": "number", "placeholder": "0.00"},
+          {"id": "schedule", "type": "select", "options": ["Daily", "Scheduled Day", "Weekly", "Monthly"]}
+        ],
+        "savedSums": [
+          {"name": "Weekly Household", "budget": 1500, "schedule": "Weekly"},
+          {"name": "Monthly Beef Share", "budget": 3200, "schedule": "Monthly"},
+          {"name": "Diet Plan - Jan", "budget": 2000, "schedule": "Monthly"},
+          {"name": "Braai Weekend", "budget": 800, "schedule": "Scheduled Day"},
+          {"name": "Kids' Monthly", "budget": 1200, "schedule": "Monthly"},
+          {"name": "Game Night Special", "budget": 2500, "schedule": "Scheduled Day"},
+          {"name": "Motshelo Commitment", "budget": 400, "schedule": "Monthly"}
+        ]
+      },
+      "ux": {
+        "tabSwitch": "Tap tab to switch between create/saved",
+        "loadAction": "Loads sum to active, updates sum header",
+        "createAction": "Creates new sum, closes panel, updates header"
+      }
+    }
+  },
+
+  "overlayComponents": {
+    "sumHeader": {
+      "id": "sumHeader",
+      "position": "Level 2 (below top header)",
+      "behavior": "expandable accordion",
+      "collapsed": {
+        "layout": "horizontal",
+        "elements": ["budget name", "remaining amount", "used amount"]
+      },
+      "expanded": {
+        "layout": "vertical-stack",
+        "elements": [
+          {"id": "progressBar", "type": "percentage fill"},
+          {"id": "itemList", "type": "scrollable list", "itemActions": ["remove"]},
+          {"id": "actionButtons", "buttons": ["Reset", "New Sum", "Share"]}
+        ]
+      },
+      "ux": {
+        "tapToExpand": "Tap sum bar to toggle",
+        "autoCalculate": "Updates remaining on item add/remove",
+        "shareAction": "Generates WhatsApp message with sum breakdown"
+      }
+    },
+
+    "toast": {
+      "id": "toast",
+      "position": "fixed bottom center",
+      "behavior": "auto-dismiss after 2.8s",
+      "wireframe": {
+        "layout": "rounded-rectangle",
+        "style": "dark background, white text"
+      },
+      "ux": {
+        "show": "opacity: 1, translateY(0)",
+        "hide": "opacity: 0, translateY(10px)",
+        "duration": 2800
+      }
+    },
+
+    "overlay": {
+      "id": "overlay",
+      "position": "full-screen backdrop",
+      "behavior": "click to close panels",
+      "wireframe": {
+        "layout": "full-screen",
+        "style": "semi-transparent dark (rgba(10,20,14,0.6))",
+        "blur": "2px backdrop-filter"
+      },
+      "ux": {
+        "show": "displays behind slide panels",
+        "tapAction": "Closes all panels"
+      }
+    }
+  },
+
+  "profileTypes": {
+    "browser": {
+      "id": "browser",
+      "name": "Browser User",
+      "emoji": "🌐",
+      "badge": "Free",
+      "permissions": ["view_items", "create_sums", "add_to_sum", "save_offline", "share_whatsapp"],
+      "restricted": ["publish_items", "vendor_dashboard", "motshelo_management"]
+    },
+    "man": {
+      "id": "man",
+      "name": "Paphani Masalila",
+      "emoji": "👨🏾",
+      "badge": "User",
+      "permissions": ["all_browser", "save_sums", "create_custom_items", "publish_anonymous", "join_motshelo", "vote_motshelo"],
+      "restricted": []
+    },
+    "woman": {
+      "id": "woman",
+      "name": "Kefilwe Sebele",
+      "emoji": "👩🏾",
+      "badge": "User",
+      "permissions": ["all_browser", "save_sums", "create_custom_items", "publish_anonymous", "join_motshelo", "vote_motshelo"],
+      "restricted": []
+    },
+    "motshelo_mgr": {
+      "id": "motshelo_mgr",
+      "name": "Paphani Masalila",
+      "emoji": "🏦",
+      "badge": "Manager",
+      "permissions": ["all_user", "create_group", "initiate_vote", "manage_members", "confirm_transactions"],
+      "restricted": ["override_4_confirmation"]
+    },
+    "butcher": {
+      "id": "butcher",
+      "name": "86th Ave Butchery",
+      "emoji": "🔪",
+      "badge": "Vendor",
+      "permissions": ["vendor_profile", "list_items", "create_notices", "view_heatmap", "kpi_dashboard"],
+      "restricted": ["view_user_identity"]
+    },
+    "refrigeration": {
+      "id": "refrigeration",
+      "name": "CoolChain Services",
+      "emoji": "❄️",
+      "badge": "Supplier",
+      "permissions": ["list_services", "set_availability", "view_forecast"],
+      "restricted": []
+    },
+    "grocery": {
+      "id": "grocery",
+      "name": "Fresh Picks Market",
+      "emoji": "🛒",
+      "badge": "Vendor",
+      "permissions": ["vendor_profile", "list_groceries", "create_notices", "kpi_dashboard"],
+      "restricted": []
+    },
+    "admin": {
+      "id": "admin",
+      "name": "Developer Admin",
+      "emoji": "⚙️",
+      "badge": "Admin",
+      "permissions": ["full_read", "system_config", "kpi_oversight", "role_assignment"],
+      "restricted": ["alter_ui_architecture"]
+    }
+  },
+
+  "userFlows": {
+    "shopper_basic": {
+      "profile": "browser",
+      "steps": [
+        {"action": "Login", "screen": "loginScreen"},
+        {"action": "Browse Items", "screen": "view-items"},
+        {"action": "Filter Category", "action": "tap category pill"},
+        {"action": "View Item", "action": "tap item card", "result": "opens itemDetailPanel"},
+        {"action": "Add to Sum", "action": "tap '+ Add to Sum'"},
+        {"action": "Track Budget", "result": "sumHeader updates"},
+        {"action": "Share", "action": "tap WhatsApp share"}
+      ]
+    },
+    "grocery_shopper": {
+      "profile": "browser",
+      "steps": [
+        {"action": "Login", "screen": "loginScreen"},
+        {"action": "Create Sum", "screen": "newSumPanel", "fields": ["name", "budget"]},
+        {"action": "Browse", "screen": "view-items"},
+        {"action": "Add Multiple Items", "action": "add various groceries + meat"},
+        {"action": "Monitor Budget", "screen": "sumHeader (expanded)"},
+        {"action": "Compare", "screen": "vendor strip under categories"},
+        {"action": "Share Sum", "action": "tap 'Share via WhatsApp'"}
+      ]
+    },
+    "motshelo_member": {
+      "profile": "man",
+      "steps": [
+        {"action": "Login", "screen": "loginScreen"},
+        {"action": "Navigate to Profile", "screen": "view-profile"},
+        {"action": "Expand Motshelo", "action": "tap Motshelo accordion"},
+        {"action": "View Vote", "action": "tap Vote tab"},
+        {"action": "Cast Vote", "action": "tap YES/NO/ABSTAIN"},
+        {"action": "View Stock", "action": "tap Stock tab"},
+        {"action": "Track Beast", "result": "see slot status"}
+      ]
+    },
+    "motshelo_manager": {
+      "profile": "motshelo_mgr",
+      "steps": [
+        {"action": "Login as Manager", "screen": "loginScreen"},
+        {"action": "Navigate to Profile", "screen": "view-profile"},
+        {"action": "Expand Motshelo", "result": "Manager features visible"},
+        {"action": "Create Vote", "action": "tap '+ Create New Vote'"},
+        {"action": "View Members", "action": "tap Members tab"},
+        {"action": "Add Member", "action": "tap '+ Add Member'"},
+        {"action": "Process Confirmations", "result": "see confirmation dots"}
+      ]
+    },
+    "vendor": {
+      "profile": "butcher",
+      "steps": [
+        {"action": "Login as Vendor", "screen": "loginScreen"},
+        {"action": "Navigate to Profile", "screen": "view-profile"},
+        {"action": "View KPI", "result": "KPI section visible"},
+        {"action": "View Heatmap", "result": "demand visualization"},
+        {"action": "View Stock", "action": "expand Stock section"},
+        {"action": "Create Item", "action": "navigate to items → '+ Create'"}
+      ]
+    }
+  },
+
+  "motsheloEngine": {
+    "states": ["DRAFT", "LOCKED", "ACTIVE", "VOTING", "RESERVING", "FULL", "READY_TO_EXECUTE", "EXECUTED"],
+    "confirmationRule": 4,
+    "minimumMembers": 10,
+    "maximumMembers": 50,
+    "quorumPercentage": 50,
+    "features": {
+      "memberManagement": {
+        "display": "Member list with contributions",
+        "info": "Name, role, network, location, weeks paid, status"
+      },
+      "voting": {
+        "display": "Vote card with progress",
+        "actions": ["YES", "NO", "ABSTAIN"],
+        "info": "Beast, cost, deadline, votes breakdown"
+      },
+      "borrow": {
+        "display": "Request cards with confirmations",
+        "info": "Member, amount, reason, repay date, confirmations (4 dots)"
+      },
+      "stock": {
+        "display": "Beast cards with slot tracking",
+        "info": "Beast ID, type, weight, price, registered, remaining"
+      }
+    }
+  },
+
+  "vendorKPI": {
+    "metrics": [
+      {"id": "itemViews", "label": "Item Views Today", "trend": "up/down"},
+      {"id": "itemsAdded", "label": "Items Added to Sums", "trend": "up/down"},
+      {"id": "avgBudget", "label": "Avg User Budget", "trend": "up/down"},
+      {"id": "peakDay", "label": "Peak Purchase Day", "trend": "neutral"},
+      {"id": "topCity", "label": "Top Sales City", "trend": "up/down"},
+      {"id": "popularShare", "label": "Most Popular Share", "trend": "up/down"},
+      {"id": "abandonedSums", "label": "Abandoned Sums", "trend": "down"},
+      {"id": "repeatCustomers", "label": "Repeat Customers", "trend": "up/down"},
+      {"id": "subscription", "label": "Platform Subscription", "trend": "fixed"},
+      {"id": "monthlyProfit", "label": "Monthly Profit Est.", "trend": "up/down"},
+      {"id": "contributionScore", "label": "Contribution Score", "trend": "up/down"},
+      {"id": "communityRating", "label": "Community Rating", "trend": "up/down"}
+    ],
+    "heatmap": {
+      "display": "28-cell grid (4 weeks)",
+      "interpretation": "Darker = higher demand",
+      "grouping": "By city/neighborhood"
+    }
+  },
+
+  "dataStructures": {
+    "appState": {
+      "keys": ["currentProfile", "sum", "user", "customItems", "currentView", "activeCat"],
+      "persistence": "localStorage (key: namatose_v2)"
+    },
+    "sum": {
+      "fields": ["name", "budget", "schedule", "items[]"],
+      "computed": "remaining = budget - (items × price)"
+    },
+    "items": {
+      "fields": ["id", "cat", "name", "price", "unit", "vendor", "emoji", "cut", "desc", "shareType", "slots", "slotsFilled", "beastId"],
+      "total": 37
+    },
+    "beasts": {
+      "fields": ["id", "type", "breed", "weight", "priceKg", "distMode", "sharePeople", "vendor", "city"],
+      "shareCalculation": {
+        "markup": "7.5%",
+        "largeSlots": 10,
+        "largeKg": 10,
+        "medSlots": 15,
+        "medKg": 5,
+        "smallKg": 2.5
+      }
+    }
+  },
+
+  "integration": {
+    "whatsapp": {
+      "deepLink": "https://wa.me/",
+      "usage": "Share sums, promos, contact vendors"
+    },
+    "facebook": {
+      "deepLink": "https://facebook.com/",
+      "usage": "Vendor gallery links"
+    },
+    "offline": {
+      "storage": "localStorage",
+      "key": "namatose_v2",
+      "behavior": "Persist user, sum, custom items on change"
+    },
+    "partners": {
+      "btcSmega": {"name": "BTC Mobile Smega", "color": "#0057a8"},
+      "mascomMyzaka": {"name": "Mascom MyZaka", "color": "#c0060f"},
+      "orangeMoney": {"name": "Orange Money", "color": "#d45f1e"}
+    }
+  },
+
+  "missingFeatures": {
+    "priority1_motshelo": {
+      "dedicatedNavTab": {
+        "status": "missing",
+        "suggestion": "Add 'Motshelo' as 5th bottom nav tab"
+      },
+      "createGroupForm": {
+        "status": "incomplete",
+        "current": "Only in profile accordion",
+        "suggestion": "Full slide panel with form"
+      },
+      "fullVoteCreation": {
+        "status": "partial",
+        "current": "Display only",
+        "suggestion": "Panel with beast selection + cost input"
+      },
+      "borrowRequestForm": {
+        "status": "basic",
+        "suggestion": "Full form with amount, reason, repayment plan"
+      },
+      "reservationPanel": {
+        "status": "missing",
+        "suggestion": "Slot selection and confirmation flow"
+      }
+    },
+    "priority2_ux": {
+      "searchFilter": {
+        "status": "missing",
+        "suggestion": "Search bar + category filter in items view"
+      },
+      "sortByPrice": {
+        "status": "missing",
+        "suggestion": "Sort dropdown (low-high, high-low)"
+      },
+      "multiSumSwitcher": {
+        "status": "partial",
+        "current": "Profile only",
+        "suggestion": "Quick switch in sum header"
+      }
+    },
+    "priority3_vendor": {
+      "createNoticeForm": {
+        "status": "missing",
+        "suggestion": "Panel to create notices with title, body, type, price"
+      }
+    }
+  },
+
+  "nextSteps": {
+    "phase1_motshelo": [
+      "Create dedicated Motshelo view with full group management",
+      "Build Vote Creation panel with beast selection",
+      "Implement Borrow Request form",
+      "Add Reservation slot selection panel"
+    ],
+    "phase2_ux": [
+      "Add search/filter to Items view",
+      "Add price sorting",
+      "Create multi-sum quick switcher"
+    ],
+    "phase3_vendor": [
+      "Build Notice creation form",
+      "Enhance Stock entry form",
+      "Add additional vendor analytics"
+    ]
+  }
+}

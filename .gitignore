@@ -1,0 +1,10 @@
+# Backup files
+backup/
+
+# Editor files
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db

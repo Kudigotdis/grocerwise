@@ -1,0 +1,13 @@
+// customers.js
+export const customers = [
+  { name: "John", surname: "Wareng", beastIdSelected: "", priceConfirmed: "P 0.00", paymentStatus: "PENDING" },
+  { name: "Mary", surname: "Kingston", beastIdSelected: "", priceConfirmed: "P 0.00", paymentStatus: "PENDING" },
+  { name: "Thato", surname: "Malawaki", beastIdSelected: "", priceConfirmed: "P 0.00", paymentStatus: "PENDING" },
+  { name: "Siyanda", surname: "Organjee", beastIdSelected: "", priceConfirmed: "P 0.00", paymentStatus: "PENDING" },
+  { name: "Lucinda", surname: "Lokhneks", beastIdSelected: "", priceConfirmed: "P 0.00", paymentStatus: "PENDING" },
+  { name: "Patricia", surname: "Loapen", beastIdSelected: "", priceConfirmed: "P 0.00", paymentStatus: "PENDING" }
+];
+
+export const customerInterests = [
+  { beastId: "", animalSummary: "", animalType: "", breed: "" }
+];
