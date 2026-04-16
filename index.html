@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="theme-color" content="#0f2417">
-<title>Namatose</title>
+<title>Grocerwise</title>
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <style>
 /* ═══════════════════════════════════════════════
@@ -720,7 +720,7 @@ body.panel-open{overflow:hidden}
         <span class="partner-tag p-orange">🟠 Orange Money</span>
       </div>
     </div>
-    <p class="login-footer">© 2025 Namatose · Bothoflow™ Protected · All Rights Reserved</p>
+    <p class="login-footer">© 2025 Grocerwise · Bothoflow™ Protected · All Rights Reserved</p>
   </div>
 </div>
 
@@ -1438,8 +1438,8 @@ const NOTICES = [
 const PROMOS = [
   {id:1,title:'10% OFF Rump Steak',body:'Every Wednesday. Min 2kg purchase required. Show this promo code at 86th Ave checkout.',vendor:'86th Ave Butchery',expires:'2025-09-30',code:'NAMATOSE10',emoji:'🥩',discount:'10% OFF'},
   {id:2,title:'Free Delivery on Group Orders',body:'Order above P 3,000 as a Motshelo group and get free delivery anywhere in Greater Gaborone.',vendor:'Ditiro Transport BW',expires:'2025-10-15',code:'GRPFREE',emoji:'🚛',discount:'FREE DELIVERY'},
-  {id:3,title:'P50 Rebate — First Group Purchase',body:'Any Motshelo group completing their first full animal purchase gets P 50 Namatose credit.',vendor:'Namatose Platform',expires:'2025-12-31',code:'MOTSHELO50',emoji:'🎉',discount:'P 50 CREDIT'},
-  {id:4,title:'Zero Fees Weekend — MyZaka',body:'Pay via Mascom MyZaka this weekend and get zero transaction fees on all Namatose purchases.',vendor:'Mascom × Namatose',expires:'2025-09-08',code:'MYZAKAZERO',emoji:'📱',discount:'ZERO FEES'},
+  {id:3,title:'P50 Rebate — First Group Purchase',body:'Any Motshelo group completing their first full animal purchase gets P 50 Grocerwise credit.',vendor:'Grocerwise Platform',expires:'2025-12-31',code:'MOTSHELO50',emoji:'🎉',discount:'P 50 CREDIT'},
+  {id:4,title:'Zero Fees Weekend — MyZaka',body:'Pay via Mascom MyZaka this weekend and get zero transaction fees on all Grocerwise purchases.',vendor:'Mascom × Grocerwise',expires:'2025-09-08',code:'MYZAKAZERO',emoji:'📱',discount:'ZERO FEES'},
   {id:5,title:'Fresh Spinach — Buy 3 Get 1',body:'Purchase 3 bundles of Oodi farm spinach, get 1 free. Available Friday & Saturday only.',vendor:'Local Farmer — Oodi',expires:'2025-09-07',code:'SPINACH4',emoji:'🥬',discount:'BUY 3 GET 1'},
 ];
 
@@ -1583,13 +1583,13 @@ function removeFromSum(itemId){
 function resetSum(){APP.sum.items=[];saveState();renderSumHeader();toast('Sum reset!');}
 
 function shareCurrentSum(){
-  let msg=`*${APP.sum.name}* — Namatose Sum (${APP.sum.schedule})\n\n`;
+  let msg=`*${APP.sum.name}* — Grocerwise Sum (${APP.sum.schedule})\n\n`;
   APP.sum.items.forEach(si=>{
     const it=findItem(si.id);
     if(it) msg+=`• ${it.name} ×${si.qty} — ${P(it.price*si.qty)}\n`;
   });
   const {used,remaining}=computeSum();
-  msg+=`\n*Total Used: ${P(used)}*\n*Remaining Budget: ${P(remaining)}*\n\nShared via Namatose 🥩\nBothoflow™ Platform`;
+  msg+=`\n*Total Used: ${P(used)}*\n*Remaining Budget: ${P(remaining)}*\n\nShared via Grocerwise 🥩\nBothoflow™ Platform`;
   openWA('?text='+encodeURIComponent(msg));
 }
 
@@ -1699,7 +1699,7 @@ const MASTER_DATA = {
   itemTags:["Organic","Halal","Fresh","Frozen","Local","Imported","Bulk Buy","Sale","New","Popular","Trending","Vegan","Gluten-Free","Low-Fat","Premium","Budget","Value Pack","Family Size","Single Serve","Ready-to-Eat","Raw","Processed"]
 };
 
-// ── 500 KPIs DATA (from kpi_500_Namatose.js) ────────────────────────────────
+// ── 500 KPIs DATA (from kpi_500_Grocerwise.js) ────────────────────────────────
 const KPI_DOMAINS = [
   {id:1,name:"SNIS Core",kpis:[
     {id:1,name:"Total Items Created",desc:"Lifetime count of all items"},
@@ -2156,7 +2156,7 @@ function renderPromos(){
   </div>`).join('');
 }
 function sharePromo(code,title){
-  openWA('?text='+encodeURIComponent(`🔥 Namatose Promo!\n\n*${title}*\nCode: *${code}*\n\nShop on Namatose — Botswana's Community Feeds Platform 🥩`));
+  openWA('?text='+encodeURIComponent(`🔥 Grocerwise Promo!\n\n*${title}*\nCode: *${code}*\n\nShop on Grocerwise — Botswana's Community Feeds Platform 🥩`));
 }
 
 // ── NOTICES RENDER ────────────────────────────────
@@ -2701,7 +2701,7 @@ function renderStockInventory(){
       <span class="chev" id="chevsStock">▼</span>
     </div>
     <div class="psect-body" id="sstock">
-      <p style="font-size:11px;color:#6b7c71;margin-bottom:8px">Daily butchery stock tracking. Outside of main Namatose calculator system.</p>
+      <p style="font-size:11px;color:#6b7c71;margin-bottom:8px">Daily butchery stock tracking. Outside of main Grocerwise calculator system.</p>
       <table class="stock-table">
         <thead><tr><th>Date</th><th>Item</th><th>Recv (kg)</th><th>Sold (kg)</th><th>Remaining</th><th>Notes</th></tr></thead>
         <tbody>
@@ -2870,7 +2870,7 @@ function loadSavedSum(i){
 
 // ── SHARE APP ─────────────────────────────────────
 function shareApp(){
-  openWA('?text='+encodeURIComponent('🥩 Join me on *Namatose* — Botswana\'s Community Feeds Platform!\n\nBudget your meat, join Motshelo groups, find deals direct from local vendors.\n\nPowered by Bothoflow™ — designed for Botswana.'));
+  openWA('?text='+encodeURIComponent('🥩 Join me on *Grocerwise* — Botswana\'s Community Feeds Platform!\n\nBudget your meat, join Motshelo groups, find deals direct from local vendors.\n\nPowered by Bothoflow™ — designed for Botswana.'));
 }
 
 // ── FINANCE VIEW RENDER ─────────────────────────────
